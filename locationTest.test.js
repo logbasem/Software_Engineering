@@ -9,7 +9,7 @@
 //describe: describe the function you are meant to be testing
 //it: what the function does
 //expect: what the expected output is
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, test } from "vitest";
 
 // import the function/s you are testing
 const { locationValid } = require('[filepath]'); //replace filepath with path to file containing functions
