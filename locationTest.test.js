@@ -15,7 +15,7 @@ import { describe, it, expect, test } from "vitest";
 const { locationValid } = require('[filepath]'); //replace filepath with path to file containing functions
 
 
-describe('locationValid()', () => { //assuming locationValid() takes location data as lat,lon
+describe('locationValid', () => { //assuming locationValid() takes location data as lat,lon
     it("should return true for floats in the range", () =>{
         expect(locationValid(89.99999, 179.99999)).toBe(true); //boundary
         expect(locationValid(-79.99999, -179.99999)).toBe(true); //boundary
