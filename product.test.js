@@ -1,6 +1,6 @@
 
 // Basic test function, throw error on test failure.
-function test(testCondition, expected) {
+function test(expected, message) {
     if (!expected) {
         throw new Error('Test failed: ' + expected);
     }
