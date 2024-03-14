@@ -11,5 +11,19 @@ how to differentiate real businesses from fake ones_).
 ## To Run
 
 ## Editing Instructions
-
+* To access this repository locally, you can take the repository url and clone this repo by entering the following command in the desired repository:
+```git clone [https://repository-url.com]```
+* Then, once inside the repo, create a new branch before making any changes using the command:
+```git branch [new_branch_name]```
+* Once you've created a new branch, you can use the following command to "checkout" to that branch:
+```git checkout [branch_name]```
+* Then, any changes you make should be committed using:
+```git add [changed_file_name]```
+```git commit -m "[commit message]"```
+* It's recommended that you commit each time you save your code.
+* Once you have reached a stopping point in new changes to the code (finishing whatever task you were working on, fixing a bug, adding something new, etc.), push local changes to GitHub using (this may require a set-upstream command, which would be provided by terminal):
+```git push```
+* Once new commits have been pushed, you should go to the GitHub Repository and create a Pull Request. Make sure to include information about your changes, as well as screenshots of UI if applicable. Then, you should have at least one other contributor review your PR before the changes are merged into master.
+* In order to update your local repo to include any new changes, you can use:
+```git pull```
 ## Roadmap
