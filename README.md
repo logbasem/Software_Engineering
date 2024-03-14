@@ -7,7 +7,11 @@ accounts should be able to create and name groups for specific businesses based 
 accounts should be able to upload their business and the products they produce to the database of the application, allowing users to access it ( _this is temporaty at the moment, I am curious about
 how to differentiate real businesses from fake ones_).
 ## Development Software
-
+#### Built with:
+* ReactJS
+* Javascript
+* MySQL
+  
 ## To Run
 
 ## Editing Instructions
