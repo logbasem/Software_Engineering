@@ -13,7 +13,7 @@ how to differentiate real businesses from fake ones_).
 * MySQL
   
 ## To Run
-
+_Instructions on how to start the web server and how to access it. Include how to run automated and manual tests after committing changes_
 ## Editing Instructions
 * To access this repository locally, you can take the repository url and clone this repo by entering the following command in the desired repository:
 
