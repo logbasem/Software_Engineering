@@ -51,4 +51,28 @@ class Product{
     setProductCompany(company){
         this.productCompany = company;
     }
+
+    /**
+     * Returns Product name.
+     * @returns {String} product name variable
+     */
+    getProductName(){
+        return this.productName;
+    }
+
+    /**
+     * Returns Product UPC identification.
+     * @returns {number || String} product UPC variable
+     */
+    getProductUPC(){
+        return this.productUPC;
+    }
+
+    /**
+     * Returns name of Product manufacturing company.
+     * @returns {String} product company variable
+     */
+    getProductCompany(){
+        return this.productCompany;
+    }
 }
