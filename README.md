@@ -45,7 +45,8 @@ _Instructions on how to start the web server and how to access it. Include how t
 
 ## Roadmap
 _Development milestones and dates to reach those_
-### Sprint 1
+### Sprint 1 : _04/11_
 - Establish basic system architecture and automatic tests for basic features
 - Fill public folder with images and resources necessary for front-end design
-### Sprint 2
+### Sprint 2 : _04/30_
+- Have main features ready and fully tested
