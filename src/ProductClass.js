@@ -1,9 +1,27 @@
 class Product{
 
+    /**
+     * Official, full name of Product
+     * @type {string}
+     */
     productName;
+    /**
+     * Product UPC identification
+     * @type {number || String}
+     */
     productUPC;
+    /**
+     * Name of manufacturing company
+     * @type {String}
+     */
     productCompany;
     
+    /**
+     * Creates a Product object and sets the product's name, UPC, and manufacturing company.
+     * @param {String} name 
+     * @param {number || String} UPC 
+     * @param {String} company 
+     */
     Product(name, UPC, company){
         this.productName = name;
         this.productUPC = UPC;
@@ -12,7 +30,7 @@ class Product{
 
     /** 
      * Sets Product name.
-     * @param {*} name new product name
+     * @param {String} name new product name
      */
     setProductName(name){
         this.productName = name;
@@ -20,7 +38,7 @@ class Product{
 
     /** 
      * Sets Product UPC.
-     * @param {*} UPC new product UPC identifier
+     * @param {number || String} UPC new product UPC identifier
      */
     setProductUPC(UPC){
         this.productUPC = UPC;
@@ -28,7 +46,7 @@ class Product{
 
     /**
      * Sets Product company.
-     * @param {*} company new Product manufacturer name
+     * @param {String} company new Product manufacturer name
      */
     setProductCompany(company){
         this.productCompany = company;
