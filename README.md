@@ -44,3 +44,8 @@ _Instructions on how to start the web server and how to access it. Include how t
 ```git pull```
 
 ## Roadmap
+_Development milestones and dates to reach those_
+### Sprint 1
+- Establish basic system architecture and automatic tests for basic features
+- Fill public folder with images and resources necessary for front-end design
+### Sprint 2
