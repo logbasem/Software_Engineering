@@ -8,10 +8,12 @@ accounts should be able to upload their business and the products they produce t
 how to differentiate real businesses from fake ones_).
 ## Development Software
 #### Built with:
-* ReactJS
-* Javascript
-* MySQL
-  
+* ReactJS 18
+* Javascript ES13
+* MySQL 8.3
+#### OS:
+Not applicable 
+
 ## To Run
 _Instructions on how to start the web server and how to access it. Include how to run automated and manual tests after committing changes_
 ## Editing Instructions
