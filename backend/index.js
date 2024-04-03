@@ -11,7 +11,6 @@ const app = express();
 dotenv.config();
 
 //open db connection
-//uses the .env file here!
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
