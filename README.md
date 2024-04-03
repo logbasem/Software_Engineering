@@ -10,7 +10,7 @@ how to differentiate real businesses from fake ones_).
 #### Built with:
 * ReactJS 18
 * Javascript ES13
-* MySQL 8.3
+* MySQL 8.0.36
 #### OS:
 Not applicable 
 
