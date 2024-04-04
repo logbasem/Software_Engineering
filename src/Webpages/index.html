@@ -6,30 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KYPer</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1 class="app-name">KYPer</h1>
-            <h4 class="app-subtitle">Know Your Producer</h2>
-        </div>
-
-        <nav>
-            <ul class="nav-list">
-                <li><a href="/">Home</a></li>
-                <li><form action="/search" method="get">
-                        <input type="text" name="query" placeholder="Search...">
-                        <button type="submit">Search</button>
-                    </form>
-                </li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/grocery_list">Grocery List</a></li>
-                <li><button type="button" href="/login">Login</button></li>
-            </ul>
+    <header className="header">
+        <div className="logo">Your Logo</div>
+        <nav className="nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/grocery-list">Grocery List</a></li>
+          </ul>
+          <div className="search-bar">
+            <input type="text" placeholder="Search" />
+          </div>
+          <div className="user-section">
+            <button>Login</button>
+          </div>
         </nav>
-    </header>
+      </header>
 
     <main>
         <div class="features-section">
