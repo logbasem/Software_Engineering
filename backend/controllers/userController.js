@@ -1,8 +1,9 @@
 // Ticket #15 - User Data table
 // Kaitlyn Peters
 
-//Description:
-// this file stores the functions that userRoutes will call!!
+//Functions that manipulate the data within the 'userModel'
+//userController is called by userRoutes
+
 const User = require('../models/user');
 
 const userController = {

@@ -1,9 +1,11 @@
-//Ticket #5 - User Data Table
+// Ticket #15 - User Data Table
 // Kaitlyn Peters
+
+//Creates a model of the `userdata` table in the db
 
 //get users local db configuration
 const dbConfig = require('../config/dbConfig.js');
-//create a model for the table `user` using Sequelize
+//use sequelize to create the model
 const Sequelize = require('sequelize');
 
 //passing parameters of db config + creating a 

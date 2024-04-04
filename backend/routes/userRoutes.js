@@ -1,14 +1,14 @@
 // Ticket #15 - User Data Table
 // Kaitlyn Peters
 
-//get the user model and connect to routes to interact
-//with the `users` table
+//gets functions from 'userController' to connect to db
+
 const express = require('express');
 //router allows us to use modular route handlers
 const router = express.Router() 
 const userController = require('../controllers/userController.js'); 
 
-//todo: Need a way to check if users are logged in
+//todo: Need a way to check if users are logged in (middleware????)
 
 //todo: login router
 //POST  (create)
