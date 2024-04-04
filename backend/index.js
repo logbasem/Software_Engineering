@@ -18,10 +18,9 @@ const db = mysql.createConnection({
     database: process.env.DB_NAME
 });
 
-//home page route connected to the backend
-app.get("/", (req, res) => {
-    res.json("this is the backend")
-});
+// MYSQL routes!! hook up the route for tables here
+app.use('/user', require('./routes/userRoutes')); //user route
+
 
 app.listen(3000, ()=>{
     console.log("Connected to backend!")

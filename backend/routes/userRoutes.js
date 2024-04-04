@@ -6,21 +6,21 @@
 const express = require('express');
 //router allows us to use modular route handlers
 const router = express.Router() 
-const User = require('../models/user'); 
+const userController = require('../controllers/userController.js'); 
 
 //todo: Need a way to check if users are logged in
 
 //todo: login router
 //POST  (create)
-router.get('/login', User.login);
+router.get('/login', userController.login);
 
 //todo: check if user is already logged in
 //GET (read)
-router.get("/", User.getLoggedInUser);
+router.get("/", userController.getLoggedInUser);
 
 //todo: register router
 //POST (create)
-router.get('/register', User.register)
+router.get('/register', userController.register)
 
 //no delete or put yet (not neccessary for now?)
 
