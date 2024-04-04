@@ -1,0 +1,1 @@
+//Create a route for getting data from the db

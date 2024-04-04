@@ -10,12 +10,17 @@ how to differentiate real businesses from fake ones_).
 #### Built with:
 * ReactJS 18
 * Javascript ES13
-* MySQL 8.3
+* MySQL 8.0.36
 #### OS:
 Not applicable 
 
 ## To Run
 _Instructions on how to start the web server and how to access it. Include how to run automated and manual tests after committing changes_
+
+#### Starting the backend for local development
+To start the backend, cd into the backend folder and use:
+``` npm start ```
+
 ## Editing Instructions
 * To access this repository locally, you can take the repository url and clone this repo by entering the following command in the desired repository:
 
