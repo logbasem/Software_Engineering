@@ -18,6 +18,8 @@ router.get('/login', userController.login);
 //GET (read)
 router.get("/", userController.getLoggedInUser);
 
+router.get("/allUsers", userController.getAllUsers);
+
 //todo: register router
 //POST (create)
 router.get('/register', userController.register)

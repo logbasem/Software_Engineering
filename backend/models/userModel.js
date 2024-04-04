@@ -19,11 +19,13 @@ const sequelize = new Sequelize(
     {
         host: dbConfig.host,
         dialect: "mysql",
-    }
+        logging: console.log
+    },
+    
 );
 
 //Create user model
-const User = sequelize.define('user', {
+const User = sequelize.define('userdata', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

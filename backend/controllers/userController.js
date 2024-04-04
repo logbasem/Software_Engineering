@@ -10,9 +10,20 @@ const userController = {
     //get all users
     getAllUsers: async (req, res) => {
         try{
-            // const users = await User.findAll();
-            // res.json(users);
-            console.log("Get users");
+            //get all users
+            // findAll is a sequelize method that returns all records in the database matching the query
+            await User.findAll({
+                attributes: [
+                    "id",
+                    "username",
+                    "userpassword",
+                    "email",
+                    "first_name",
+                    "last_name",
+                ],
+            }).then((userdata) => {
+                res.status(200).json(userdata);
+            });
         }
         catch (error) {
             console.error('Error getting all users:', error);
