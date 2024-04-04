@@ -6,7 +6,8 @@ const dbConfig = require('../config/dbConfig.js');
 //create a model for the table `user` using Sequelize
 const Sequelize = require('sequelize');
 
-//passing parameters
+//passing parameters of db config + creating a 
+// sequalize object (?)
 const sequelize = new Sequelize(
     dbConfig.database,
     dbConfig.user,
@@ -45,5 +46,6 @@ const User = sequelize.define('user', {
         type: DataTypes.STRING,
         allowNull: false,
     }
-    
 });
+
+modules.export = User;
