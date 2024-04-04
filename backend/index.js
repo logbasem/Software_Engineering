@@ -13,7 +13,7 @@ const app = express();
 require('dotenv').config();
 
 // MYSQL routes!! hook up the route for tables here
-app.use('/user', require('./routes/userRoutes')); //user route
+app.use('/users', require('./routes/userRoutes')); //user route
 
 app.listen(3000, ()=>{
     console.log("Server starting");

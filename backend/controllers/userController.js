@@ -7,7 +7,9 @@
 const User = require('../models/userModel');
 
 const userController = {
-    //get all users
+    //@desc Return a list of all users
+    //@route GET /users/allUsers
+    //@access Private
     getAllUsers: async (req, res) => {
         try{
             //get all users
@@ -21,6 +23,7 @@ const userController = {
                     "first_name",
                     "last_name",
                 ],
+                //success message + json data retrieved from tables
             }).then((userdata) => {
                 res.status(200).json(userdata);
             });
@@ -30,8 +33,9 @@ const userController = {
             res.status(500).json({error: 'Error getting all users'});
         }
     },
-    //POST
-    // get user
+    //@desc Login user
+    //@route POST /users/login
+    //@access Public
     login: async (req, res) => {
         try {
             //todo
@@ -43,8 +47,9 @@ const userController = {
         }
     },
 
-    //GET
-    // get currently loggedd user
+    // @desc Check if user is logged in
+    // @route GET /users/getLoggedInUser
+    // @access Private
     getLoggedInUser: async (req, res) => {
         try {
             //todo
@@ -56,17 +61,39 @@ const userController = {
         }
     },
 
-    //POST
-    // create user/ register user
+    // @desc Register new user
+    // @route POST /users/register
+    // @access Priate
     register: async (req, res) => {
         try {
-            console.log("Get registered user")
+            //extract user data from request body
+            const {username, userpassword, first_name, last_name, email} = req.body;
+
+            //Create a new user instance (using sequelize)
+            //note: all queries must be NON NULL!
+            const newUser = await User.create({
+                username,
+                userpassword,
+                first_name,
+                last_name,
+                email
+            });
+
+            //success message
+            res.status(200).json({success: true, data: newUser});
         }
         catch(error) {
             console.log(error);
             res.status(500).json({error: 'Error registering user'});
         }
     },
+
+    //todo: update user
+    // @route PUT
+    // @access Private
+    updateUser: async (req, res) => {
+
+    }
 };
 
 module.exports = userController;
