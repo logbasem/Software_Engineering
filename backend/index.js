@@ -2,9 +2,10 @@
 // Kaitlyn Peters
 
 //node js and express js to connect to mySQL database
-import express from "express";
-import mysql from "mysql";
-import dotenv from "dotenv";
+// import express from "express";
+const express = require('express');
+const mysql = require('mysql');
+const dotenv = require('dotenv');
 
 const app = express();
 //get environment variables from .env file

@@ -7,6 +7,7 @@
 const dbConfig = require('../config/dbConfig.js');
 //use sequelize to create the model
 const Sequelize = require('sequelize');
+var DataTypes = require('sequelize/lib/data-types');
 
 //passing parameters of db config + creating a 
 // sequalize object (?)
@@ -48,6 +49,7 @@ const User = sequelize.define('user', {
         type: DataTypes.STRING,
         allowNull: false,
     }
+    
 });
 
-modules.export = User;
+module.exports = User;
