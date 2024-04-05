@@ -14,3 +14,4 @@ Here are the steps for getting the back end running:
 3. Dotenv (ver 16.4.5)
 4. Sequelize (ver 9.6.7) (for creating models from mySQL table data)
     1. mySQL 12 (driver for sequelize)
+5. Passport JS -- ver 9.6.7 (authentication for username and passwords against db) 
