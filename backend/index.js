@@ -45,13 +45,10 @@ passport.use(new LocalStrategy(
         passwordField: "userpassword",
         passReqToCallback: true,
     },
-    function(req, username, password, done) {
-        //validate passwords
-        const isValidPassword = async function(enteredPassword, user.userpassword) {
-
-        }
-       
-
+    async function(req, username, password, done) {
+        var isValidPassword = async function(enteredPassw, hashedPass) {
+            const result = await bcrypt.compare(enteredPass, hashPass);
+        };
         //query the entered username
         User.findOne({
             where:
@@ -63,6 +60,12 @@ passport.use(new LocalStrategy(
             if(!user) {
                 return done(null, false, {
                     message: "Username does not exist",
+                });
+            }
+            //compare against the entered password + users hashed password
+            if(!isValidPassword(password, user.password)) {
+                return done(null, false, {
+                    message: "Incorrect password.",
                 });
             }
             //to do: User is valid but password is not
