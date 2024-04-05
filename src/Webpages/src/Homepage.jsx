@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from 'Header.jsx'
-import 'index.css';
+import Header from './Header.jsx'
+import './index.css';
 
-function Homepage() {
+export function Homepage() {
   return (
     <div>
       <Header/>
@@ -59,5 +59,3 @@ function Homepage() {
     </div>
   );
 }
-
-export default Homepage;
