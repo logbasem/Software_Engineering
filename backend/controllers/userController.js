@@ -33,6 +33,7 @@ const userController = {
             res.status(500).json({error: 'Error getting all users'});
         }
     },
+
     //@desc Login user
     //@route POST /users/login
     //@access Public
@@ -48,7 +49,7 @@ const userController = {
     },
 
     // @desc Check if user is logged in
-    // @route GET /users/getLoggedInUser
+    // @route GET /users/
     // @access Private
     getLoggedInUser: async (req, res) => {
         try {
@@ -63,7 +64,7 @@ const userController = {
 
     // @desc Register new user
     // @route POST /users/register
-    // @access Priate
+    // @access Private
     register: async (req, res) => {
         try {
             //extract user data from request body
