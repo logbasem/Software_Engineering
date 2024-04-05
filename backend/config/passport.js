@@ -1,2 +1,1 @@
-//ticket #15 - User Table Data
-// configuration for passport (to authenticate the user login)
+//todo: move all passport config in index.js to here 

@@ -20,6 +20,24 @@ app.use(passport.session());
 
 const User = require('./models/userModel.js'); //get user model
 
+//serialize and deserialize
+//for maintaining login session
+passport.serializeUser((user, done) => {
+    console.log(user.id);
+    done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+    //retrieve user form the data base using id
+    User.findAll({
+        where: {
+            id: id,
+        },
+    }).then((user) => {
+        done(null, user);
+     });
+});
+
 passport.use(new LocalStrategy(
     {
         usernameField: "username",
