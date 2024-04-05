@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header.jsx'
+import Footer from './Footer.jsx'
 import './index.css';
 
 export function Homepage() {
@@ -53,9 +54,7 @@ export function Homepage() {
         </div>
       </main>
 
-      <footer>
-        <p>Group N &copy; 2024, All Right Reserved</p>
-      </footer>
+      <Footer/>
     </div>
   );
 }
