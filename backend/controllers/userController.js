@@ -6,33 +6,25 @@
 
 const passport = require('passport');
 const bcrypt = require('bcrypt'); //for salting passwords
-const hash = require('bcryptjs')
 const User = require('../models/userModel');
 
-//passsword salting + hashing using bcrypt -----------
-const saltRounds = 10;
 
 async function hashPassword(password) {
-    try{
-        //generate a salt
-        const salt = bcrypt.genSalt(saltRounds)
-        //hash the password
-        const hashedPassword = await bcrypt.hash(password, salt);
+    try {
+        const saltRounds = 10;
+        // Generate a salt and hash the password
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
         return hashedPassword;
-    }
-    catch(error) {
+    } catch (error) {
         console.log(error.message);
+        throw error; // Re-throw the error to handle it outside the function
     }
-    
-}
-//check the password
-// async function checkPassword(password) {
-//     const result = await bcrypt.compare(password, hash);
-//     return result;
-// }
+};
 
 //USER CONTROLLER METHODS ---------
 const userController = {
+    //passsword salting + hashing using bcrypt -----------
+
     //@desc Return a list of all users
     //@route GET /users/allUsers
     //@access Private
@@ -107,8 +99,9 @@ const userController = {
         try {
             //extract user data from request body
             const {username, enteredPassword, first_name, last_name, email} = req.body;
-            const userpassword = hashPassword(enteredPassword); //hash password
-
+            //hash/salt the password
+            const userpassword = await hashPassword(enteredPassword);
+   
             //Create a new user instance (using sequelize)
             //note: all queries must be NON NULL!
             const newUser = await User.create({
@@ -118,9 +111,8 @@ const userController = {
                 last_name,
                 email
             });
-
             //success message
-            res.status(200).json({message: 'User created', data: newUser});
+            res.status(200).json({message: 'User created'});
         }
         catch(error) {
             console.log(error);

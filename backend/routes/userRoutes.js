@@ -20,19 +20,20 @@ function isAuthenticated(req, res, next) {
     //else redirect user to login page
     res.redirect('/login');
 }
-//todo: login router
+//login router
 //POST  (create)
-router.get('/login', userController.login);
+router.post('/login', userController.login);
 
-//todo: Get logged in user
+//Get logged in user
 //GET (read)
 router.get("/", isAuthenticated, userController.getLoggedInUser);
 
+
 router.get("/allUsers", userController.getAllUsers);
 
-//todo: register router
+//register router
 //POST (create)
-router.get('/register', userController.register)
+router.post('/register', userController.register)
 
 
 module.exports = router;
