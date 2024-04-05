@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #94B16F;
+    font-size: larger;
+    margin: 0%;
+  }
+  
+  .logo {
+    margin-right: auto; /* Pushes the logo to the far left */
+    margin-top: 10px;
+    width:auto;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display list items horizontally */
+  }
+  
+  .nav li {
+    margin-right: 20px;
+  }
+  
+  .nav a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Change link color */
+  }
+  
+  .search-bar,
+  .user-section {
+    margin-left: 20px;
+  }
