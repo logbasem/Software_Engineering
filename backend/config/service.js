@@ -17,9 +17,13 @@ const registerUser = {
 
 const loginUser = {
     username: "Kaitlyn",
-    enteredPassword: "password123",
+    userpassword: "password123",
 }
 
+const loginUser2 = {
+    username: "test2",
+    userpassword: "test2",
+}
 //create a mock request
 const options = {
     hostname: 'localhost',
@@ -48,28 +52,15 @@ req.on('error', (error) => {
     console.error('Error', error);
 });
 
-// async function hashPassword(password) {
-//     try {
-//         const saltRounds = 10;
-//         // Generate a salt and hash the password
-//         const hashedPassword = await bcrypt.hash(password, saltRounds);
-//         console.log("Hashing successful");
-//         return hashedPassword;
-//     } catch (error) {
-//         console.log(error.message);
-//         throw error; // Re-throw the error to handle it outside the function
-//     }
-//}
-
 // REQ body------------
 //for register
-// const requestBodyRegister = JSON.stringify({
-//     username: registerUser.username,
-//     enteredPassword: registerUser.enteredPassword,
-//     first_name: registerUser.first_name,
-//     last_name: registerUser.last_name,
-//     email: registerUser.email,
-// });
+const requestBodyRegister = JSON.stringify({
+    username: registerUser.username,
+    enteredPassword: registerUser.enteredPassword,
+    first_name: registerUser.first_name,
+    last_name: registerUser.last_name,
+    email: registerUser.email,
+});
 //for log in
 const requestBodyLogin = JSON.stringify({
     username: loginUser.username,

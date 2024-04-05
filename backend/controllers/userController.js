@@ -56,7 +56,7 @@ const userController = {
     //@desc Login user
     //@route POST /users/login
     //@access Public
-    login: async (req, res) => {
+    login: async (req, res, next) => {
         //authenticate using passport
         //note: the passwords are hashed. Passport checks the hashed passwords
         //using its local strategy where passport is configured (check index.js)
@@ -67,7 +67,7 @@ const userController = {
             }
             //user not found
             if(!user) {
-                return res.status(401).json({message: 'Invalid username or password'});
+                return res.status(401).send(info.message);
             }
             //If sucess, log in the user
             req.logIn(user, (err) => {

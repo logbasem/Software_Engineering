@@ -51,6 +51,10 @@ passport.deserializeUser((id, done) => {
      });
 });
 
+async function isValidPassword(enteredPass, hashPass) {
+    const result = await bcrypt.compare(enteredPass, hashPass);
+};
+
 //passport configuration
 passport.use(new LocalStrategy(
     {
@@ -59,9 +63,6 @@ passport.use(new LocalStrategy(
         passReqToCallback: true,
     },
     async function(req, username, password, done) {
-        var isValidPassword = async function(enteredPassw, hashedPass) {
-            const result = await bcrypt.compare(enteredPass, hashPass);
-        };
         //query the entered username
         User.findOne({
             where:
@@ -76,7 +77,7 @@ passport.use(new LocalStrategy(
                 });
             }
             //compare against the entered password + users hashed password
-            if(!isValidPassword(password, user.password)) {
+            if(!(isValidPassword(password, user.userpassword))) {
                 return done(null, false, {
                     message: "Incorrect password.",
                 });
