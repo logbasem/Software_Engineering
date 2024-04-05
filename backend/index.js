@@ -9,6 +9,7 @@ const mysql = require('mysql');
 const dotenv = require('dotenv');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const bcrypt = require('bcrypt');
 const app = express();
 
 //get environment variables from .env file
@@ -45,8 +46,11 @@ passport.use(new LocalStrategy(
         passReqToCallback: true,
     },
     function(req, username, password, done) {
-        //todo: check for valid passwords, might need to
-        //figure out the hashing/salting situation
+        //validate passwords
+        const isValidPassword = async function(enteredPassword, user.userpassword) {
+
+        }
+       
 
         //query the entered username
         User.findOne({

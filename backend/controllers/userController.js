@@ -1,13 +1,37 @@
 // Ticket #15 - User Data table
 // Kaitlyn Peters
 
-//Functions that manipulate the data within the 'userModel'
-//userController is called by userRoutes
+//Contains functions that manipulate the data within the 'userModel'
+//note: userController methods are called by userRoutes
+
 const passport = require('passport');
+const bcrypt = require('bcrypt'); //for salting passwords
+const hash = require('bcryptjs')
 const User = require('../models/userModel');
 
-//todo: password hashing/salting
+//passsword salting + hashing using bcrypt -----------
+const saltRounds = 10;
 
+async function hashPassword(password) {
+    try{
+        //generate a salt
+        const salt = bcrypt.genSalt(saltRounds)
+        //hash the password
+        const hashedPassword = await bcrypt.hash(password, salt);
+        return hashedPassword;
+    }
+    catch(error) {
+        console.log(error.message);
+    }
+    
+}
+//check the password
+// async function checkPassword(password) {
+//     const result = await bcrypt.compare(password, hash);
+//     return result;
+// }
+
+//USER CONTROLLER METHODS ---------
 const userController = {
     //@desc Return a list of all users
     //@route GET /users/allUsers
@@ -36,11 +60,14 @@ const userController = {
         }
     },
 
+
     //@desc Login user
     //@route POST /users/login
     //@access Public
     login: async (req, res) => {
         //authenticate using passport
+        //note: the passwords are hashed. Passport checks the hashed passwords
+        //using its local strategy where passport is configured (check index.js)
         passport.authenticate('local', (err, user, info) => {
             if(err) {
                 console.log(err);
@@ -65,7 +92,8 @@ const userController = {
     // @access Private
     getLoggedInUser: async (req, res) => {
         if(req.isAuthenticated()) {
-            res.status(200).json(req.user); //sucess message
+            //success message + returns the JSON user data as well
+            res.status(200).json(req.user); 
         }
         else {
             res.status(401).json({message: 'No user logged in'});
@@ -78,7 +106,8 @@ const userController = {
     register: async (req, res) => {
         try {
             //extract user data from request body
-            const {username, userpassword, first_name, last_name, email} = req.body;
+            const {username, enteredPassword, first_name, last_name, email} = req.body;
+            const userpassword = hashPassword(enteredPassword); //hash password
 
             //Create a new user instance (using sequelize)
             //note: all queries must be NON NULL!
@@ -91,7 +120,7 @@ const userController = {
             });
 
             //success message
-            res.status(200).json({success: true, data: newUser});
+            res.status(200).json({message: 'User created', data: newUser});
         }
         catch(error) {
             console.log(error);

@@ -24,7 +24,7 @@ function isAuthenticated(req, res, next) {
 //POST  (create)
 router.get('/login', userController.login);
 
-//todo: Get logged in user (will be used for retrieving profile page data!)
+//todo: Get logged in user
 //GET (read)
 router.get("/", isAuthenticated, userController.getLoggedInUser);
 
