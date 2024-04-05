@@ -1,5 +1,5 @@
 //Ticket #15 - User Data Table
-//KP
+//Kaitlyn peters
 
 // mock http requests to test the controllers
 

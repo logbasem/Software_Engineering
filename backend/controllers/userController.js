@@ -8,14 +8,15 @@ const passport = require('passport');
 const bcrypt = require('bcrypt'); //for salting passwords
 const User = require('../models/userModel');
 
-
+//function to salt password using bcrypt
 async function hashPassword(password) {
     try {
         const saltRounds = 10;
         // Generate a salt and hash the password
         const hashedPassword = await bcrypt.hash(password, saltRounds);
         return hashedPassword;
-    } catch (error) {
+    } 
+    catch (error) {
         console.log(error.message);
         throw error; // Re-throw the error to handle it outside the function
     }

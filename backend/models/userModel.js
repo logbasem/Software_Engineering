@@ -9,8 +9,7 @@ const dbConfig = require('../config/dbConfig.js');
 const Sequelize = require('sequelize');
 var DataTypes = require('sequelize/lib/data-types');
 
-//passing parameters of db config + creating a 
-// sequalize object (?)
+//passing parameters of db config
 const sequelize = new Sequelize(
     dbConfig.database,
     dbConfig.user,
