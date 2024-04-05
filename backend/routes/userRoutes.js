@@ -4,19 +4,29 @@
 //gets functions from 'userController' to connect to db
 
 const express = require('express');
+const passport = require('passport')
+const LocalStrategy = require('passport-local');
+
 //router allows us to use modular route handlers
 const router = express.Router() 
 const userController = require('../controllers/userController.js'); 
 
-//todo: Need a way to check if users are logged in (middleware????)
-
+//middleware for authentication (passportjs)
+function isAuthenticated(req, res, next) {
+    //if logged in, continue
+    if(req.isAuthenticated()) {
+        return next();
+    }
+    //else redirect user to login page
+    res.redirect('/login');
+}
 //todo: login router
 //POST  (create)
 router.get('/login', userController.login);
 
-//todo: check if user is already logged in
+//todo: Get logged in user (will be used for retrieving profile page data!)
 //GET (read)
-router.get("/", userController.getLoggedInUser);
+router.get("/", isAuthenticated, userController.getLoggedInUser);
 
 router.get("/allUsers", userController.getAllUsers);
 
@@ -24,6 +34,5 @@ router.get("/allUsers", userController.getAllUsers);
 //POST (create)
 router.get('/register', userController.register)
 
-//no delete or put yet (not neccessary for now?)
 
 module.exports = router;

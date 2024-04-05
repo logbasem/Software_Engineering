@@ -3,8 +3,10 @@
 
 //Functions that manipulate the data within the 'userModel'
 //userController is called by userRoutes
-
+const passport = require('passport');
 const User = require('../models/userModel');
+
+//todo: password hashing/salting
 
 const userController = {
     //@desc Return a list of all users
@@ -38,27 +40,35 @@ const userController = {
     //@route POST /users/login
     //@access Public
     login: async (req, res) => {
-        try {
-            //todo
-            console.log("Login the user");
-        }
-        catch (error) {
-            console.log(error);
-            res.status(500).json({error: 'Error logging in'});
-        }
+        //authenticate using passport
+        passport.authenticate('local', (err, user, info) => {
+            if(err) {
+                console.log(err);
+                return next(err);
+            }
+            //user not found
+            if(!user) {
+                return res.status(401).json({message: 'Invalid username or password'});
+            }
+            //If sucess, log in the user
+            req.logIn(user, (err) => {
+                if(err) {
+                    return next(err);
+                }
+                return res.json({message: 'Login sucessful', user});
+            });
+        })(req, res, next);
     },
 
     // @desc Check if user is logged in
     // @route GET /users/
     // @access Private
     getLoggedInUser: async (req, res) => {
-        try {
-            //todo
-            console.log("Get logged in user");
+        if(req.isAuthenticated()) {
+            res.status(200).json(req.user); //sucess message
         }
-        catch (error) {
-            console.log(error);
-            res.status(500).json({error: 'Error getting logged in user'});
+        else {
+            res.status(401).json({message: 'No user logged in'});
         }
     },
 

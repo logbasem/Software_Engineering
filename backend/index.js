@@ -66,7 +66,7 @@ passport.use(new LocalStrategy(
         //error message :(
         }).catch(function (err) {
             console.log("Error:", err);
-            return done(null, false {
+            return done(null, false, {
                 message: "login failed",
             });
         });

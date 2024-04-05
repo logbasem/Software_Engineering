@@ -9,5 +9,4 @@ var databaseOptions = {
     database: process.env.DB_NAME,
 };
 
-console.log("dotenv" + databaseOptions.user);
 module.exports = databaseOptions;
