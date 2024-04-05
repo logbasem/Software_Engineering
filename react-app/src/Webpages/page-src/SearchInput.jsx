@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+/*import React, { useState } from "react";
 import { useHistory } from "react-router-dom"
+
+THIS IS TEST CODE TO INCORPORATE BACKEND INTO SEARCH FUNCTION LATER. CAUSES ERRORS WHEN UNCOMMENTED.
 
 //component reference from Chinedu Imoh at: https://www.telerik.com/blogs/how-to-implement-standard-search-using-react
 //this is specifically a component configured to work with express, so should be relatively simple
@@ -27,4 +29,4 @@ export const SearchInput = () =>
         </div>
     )
 }
-export default SearchInput;
+export default SearchInput;*/
