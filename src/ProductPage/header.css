@@ -8,27 +8,75 @@
 }
 
 .left-section{
-    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 250px;
     margin-left: 20px;
 
 }
 
+.kyper_Logo{
+    width : 105px;
+    height: 45px;
+}
 .middle-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex: 1;
     margin-left: 80px;
     margin-right: 80px;
 }
 
+.search-bar{
+    flex: 1;
+    border-color:black;
+    border-width: 1px;
+    height: 30px;
+}
+
+.search-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    margin-left: -1px;
+    border-width: 1px;
+}
+
+.search-image{
+    height: 15px;
+    width: 15px;
+}
+
 .right-section{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     margin-right: 20px;
-    background-color: blue;
     width: 500px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family:'Inter', sans-serif;
+}
+
+.Login{
+    background-color: black;
+    color: white;
+    border-radius: 12%;
+    border: none;
+    cursor: pointer;
+    margin-right: 50px;
 }
 
 .Lists{
-
+    margin-right: 40px;
 }
+
+.About{
+    margin-right: 40px;
+}
+
