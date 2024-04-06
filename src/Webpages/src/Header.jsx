@@ -1,9 +1,13 @@
 import React from 'react';
+import './asset.css';
+import KYPerLogo from './KYPer Logo.png'; // Import the PNG image
 
 function Header() {
   return (
     <header className="header">
-      <div className="logo">Your Logo</div>
+      <div className="logo">
+        <img src={KYPerLogo} alt="KYPer Logo" />
+      </div>
       <nav className="nav">
         <ul>
           <li><a href="/">Home</a></li>
