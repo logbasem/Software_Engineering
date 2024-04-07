@@ -1,0 +1,51 @@
+html {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #788E5B;
+  }
+  .features-section {
+    text-align: center; /* Center align h3 */
+  }
+  
+  .features {
+    display: flex; /* Make children inline */
+    justify-content: space-between; /* Equally distribute space between children */
+  }
+  
+  .features-1,
+  .features-2,
+  .features-3 {
+    flex: 1; /* Equal width for each section */
+    margin: 0 10px; /* Add some spacing between sections */
+    text-align: center; /* Center align text within each section */
+  }
+  
+  .features img {
+    width: 100%; /* Make images fill their containers */
+    max-width: 400px; /* Set a maximum width for the images */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .payment-plans {
+    text-align: center; /* Center align h3 */
+  }
+  
+  .plans {
+    display: flex;
+  }
+  
+  .payment-plans h3 {
+    margin-bottom: 20px; /* Add some space below the header */
+  }
+  
+  .producer-plan,
+  .shopper-plan {
+    flex: 1; /* Equal width for both sections */
+    margin: 0 10px; /* Add some spacing between sections */
+    display: inline-block; /* Display sections side by side */
+    vertical-align: top; /* Align sections to the top */
+  }
+  
+  .producer-plan h4,
+  .shopper-plan h4 {
+    text-align: center; /* Center align h4 within each section */
+  }
