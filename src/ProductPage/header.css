@@ -80,3 +80,15 @@
     margin-right: 40px;
 }
 
+.main-page{
+    background-color: lightblue;
+    display: flex;
+    flex-flow: column;
+    height: 600px;
+}
+
+.footer{
+    background-color: #94B16F;
+    display: flex;
+    flex:1;
+}
