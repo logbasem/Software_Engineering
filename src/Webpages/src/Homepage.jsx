@@ -3,6 +3,8 @@ import Header from './Header.jsx'
 import Footer from './Footer.jsx'
 import './index.css';
 import Market from './market.jpg';
+import Grocery from './grocery.jpg';
+import Lookup from './upc_lookup.jpg';
 
 export function Homepage() {
   return (
@@ -15,17 +17,17 @@ export function Homepage() {
           <div className="features">
             <div className="features-1">
               <h4>Search for Local Versions of Popular Items!</h4>
-              <img src={ Market }></img>
+              <img src={ Market }/>
             </div>
 
             <div className="features-2">
               <h4>Save What You Find for Later with Grocery Lists!</h4>
-              <img src={ Grocery }></img>
+              <img src={ Grocery }/>
             </div>
 
             <div className="features-3">
               <h4>Quickly Discover What Big-Name Companies Produce Your Groceries Using Our UPC Look-up!</h4>
-              <img src={ Lookup }></img>
+              <img src={ Lookup }/>
             </div>
           </div>
         </div>
@@ -36,7 +38,7 @@ export function Homepage() {
             <div className="producer-plan">
               <h4>For Producers:</h4>
               <p>If you are small business interested in uploading your products to our service, we request a small monthly fee to distributors.</p>
-              <p>$4.99/month</p>
+              <p className="price">$4.99/month</p>
               <ul className="account-features">
                 <li>Use of services including interest tracking and restock notifications.</li>
                 <li>Advertise your products.</li>
@@ -48,7 +50,7 @@ export function Homepage() {
             <div className="shopper-plan">
               <h4>For Shoppers:</h4>
               <p>Search-based services are free for consumers. If you create an account, you have access to additional features for conscious consumption.</p>
-              <p>Free</p>
+              <p className="price">Free</p>
               <ul className="account-features">
                 <li>Save your favorite locally-owned products and businesses.</li>
                 <li>Save your buying history.</li>
