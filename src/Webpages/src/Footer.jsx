@@ -1,3 +1,4 @@
+/*Ticket 2*/
 import React from 'react';
 import './asset.css';
 import KYPerLogo from './KYPer Logo.png';

@@ -1,3 +1,4 @@
+/*Ticket 2*/
 import React from 'react';
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
@@ -17,17 +18,17 @@ export function Homepage() {
           <div className="features">
             <div className="features-1">
               <h4>Search for Local Versions of Popular Items!</h4>
-              <img src={ Market }/>
+              <img src={ Market } alt="Farmer's Market"/>
             </div>
 
             <div className="features-2">
               <h4>Save What You Find for Later with Grocery Lists!</h4>
-              <img src={ Grocery }/>
+              <img src={ Grocery } alt="Grocery List"/>
             </div>
 
             <div className="features-3">
               <h4>Quickly Discover What Big-Name Companies Produce Your Groceries Using Our UPC Look-up!</h4>
-              <img src={ Lookup }/>
+              <img src={ Lookup } alt="UPC Lookup"/>
             </div>
           </div>
         </div>
