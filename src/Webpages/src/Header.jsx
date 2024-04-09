@@ -1,3 +1,4 @@
+/*Ticket 2*/
 import React from 'react';
 import './asset.css';
 import KYPerLogo from './KYPer Logo.png'; // Import the PNG image
@@ -5,9 +6,7 @@ import KYPerLogo from './KYPer Logo.png'; // Import the PNG image
 function Header() {
   return (
     <header className="header">
-      <div className="logo">
-        <img src={KYPerLogo} alt="KYPer Logo" />
-      </div>
+      <img src={KYPerLogo} alt="KYPer Logo" className="logo"/>
       <nav className="nav">
         <ul>
           <li><a href="/">Home</a></li>
