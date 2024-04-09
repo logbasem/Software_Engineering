@@ -1,0 +1,85 @@
+/*Ticket 2*/
+html {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #788E5B;
+  padding: 10px;
+  height: 100%;
+}
+.features-section {
+  text-align: center; /* Center align h3 */
+  background-color: #C3E09D;
+}
+
+.features-section h3 {
+  padding-top: 20px;
+  font-size: 25px;
+}
+
+.features {
+  display: flex; /* Make children inline */
+  justify-content: space-between; /* Equally distribute space between children */
+  padding: 10px
+}
+
+.features-1,
+.features-2,
+.features-3 {
+  flex: 1; /* Equal width for each section */
+  margin: 0 10px; /* Add some spacing between sections */
+  text-align: center; /* Center align text within each section */
+  background-color: #94B16F;
+  border-radius: 10%;
+  padding: 20px;
+
+}
+
+.features img {
+  width: 100%; /* Make images fill their containers */
+  max-width: 400px; /* Set a maximum width for the images */
+  height: auto; /* Maintain aspect ratio */
+  
+}
+
+.payment-plans {
+  text-align: center; /* Center align h3 */
+  background-color: #C3E09D;
+}
+
+.plans {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.payment-plans h3 {
+  padding-top: 20px;
+  margin-bottom: 20px; /* Add some space below the header */
+  font-size: 25px;
+}
+
+.producer-plan,
+.shopper-plan {
+  flex: 1; /* Equal width for both sections */
+  margin: 0 10px; /* Add some spacing between sections */
+  display: inline-block; /* Display sections side by side */
+  vertical-align: top; /* Align sections to the top */
+  background-color: #94B16F;
+  border-radius: 10%;
+  padding: 10px;
+  max-width: 500px;
+}
+
+.producer-plan h4,
+.shopper-plan h4 {
+  text-align: center; /* Center align h4 within each section */
+  font-size: larger;
+}
+
+.producer-plan .account-features,
+.shopper-plan .account-features {
+  text-align: left;
+}
+
+.price {
+  font-size: 40px;
+}
