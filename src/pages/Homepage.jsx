@@ -2,10 +2,10 @@
 import React from 'react';
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
-import './index.css';
-import Market from './market.jpg';
-import Grocery from './grocery.jpg';
-import Lookup from './upc_lookup.jpg';
+import '../css-html/index.css'
+import Market from '../assets/market.jpg';
+import Grocery from '../assets/grocery.jpg';
+import Lookup from '../assets/upc_lookup.jpg';
 
 export function Homepage() {
   return (
@@ -67,3 +67,5 @@ export function Homepage() {
     </div>
   );
 }
+
+export default Homepage;

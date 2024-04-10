@@ -1,7 +1,8 @@
-{/*Issue #6, Ticket #1*/}
 import React, { useState } from "react";
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
+
+{/*Issue #6, Ticket #1*/}
 
 const Profile = () => {
   const profileImage =

@@ -1,7 +1,7 @@
 /*Ticket 2*/
 import React from 'react';
-import './asset.css';
-import KYPerLogo from './KYPer Logo.png'; // Import the PNG image
+import '../css-html/asset.css';
+import KYPerLogo from '../assets/KYPer Logo.png';
 
 function Header() {
   return (
