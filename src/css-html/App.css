@@ -95,3 +95,68 @@
     transform: rotate(360deg);
   }
 }
+
+.form-container {
+  padding: 20px;
+  margin: auto;
+  width: 90%;
+  max-width: 500px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.register {
+  padding: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+  max-width: 400px; /* or any other maximum width */
+  margin-left: auto; /* Centers the element within its container */
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block; /* Ensures margin: auto takes effect */
+}
+
+.register:focus {
+  border-color: #6658d3;
+  box-shadow: 0 0 5px rgba(102,88,211,0.3);
+  outline: none;
+}
+
+.register-login-button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+  max-width: 400px; /* or any other maximum width */
+  margin: auto; /* Centers the element within its container */
+  display: block; /* Ensures margin: auto takes effect */
+}
+
+.register-login-button:hover {
+  background-color: #45a049;
+}
+
+
+
+.registerh1 {
+  text-align: center;
+  font-size: 24px;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+  max-width: 400px; /* or any other maximum width */
+  margin: auto; /* Centers the element within its container */
+  display: block; /* Ensures margin: auto takes effect */
+  color: #4CAF50;
+  padding-top: 15px;
+}
