@@ -1,3 +1,5 @@
+/* Issues 8 and 9: Login and Register pages */
+
 import './App.css';
 import React from 'react';
 import { useForm } from 'react-hook-form';
