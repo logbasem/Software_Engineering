@@ -16,31 +16,31 @@ html {
 
 .features {
   display:inline-flex; /* Make children inline */
-  justify-content: space-between; /* Equally distribute space between children */
+  justify-content: space-evenly; /* Equally distribute space between children */
   padding: 10px;
-
+  flex-wrap: wrap;
 }
 
 .features-1,
 .features-2,
 .features-3 {
   flex: 1; /* Equal width for each section */
-  margin: 0 10px; /* Add some spacing between sections */
+  margin: 10px 10px; /* Add some spacing between sections */
   text-align: center; /* Center align text within each section */
   background-color: #94B16F;
   border-radius: 10%;
-  padding: 20px;
   max-width: 400px;
   font-size: 20px;
   border-style: solid;
   border-color: #788E5B;
-
+  padding: 15px;
+  min-width: 400px;
 }
 
 .features-1 h4, 
 .features-2 h4,
 .features-3 h4 {
-  height: 30%;
+  min-width: 250px;
 }
 
 .features img {
@@ -48,6 +48,7 @@ html {
   max-width: 400px; /* Set a maximum width for the images */
   height: auto; /* Maintain aspect ratio */
   border-radius: 10%;
+  margin-top: 10px;
 }
 
 .payment-plans {
@@ -60,6 +61,8 @@ html {
   display: inline-flex;
   margin-bottom: 10px;
   padding: 10px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .payment-plans h3 {
@@ -71,13 +74,14 @@ html {
 .producer-plan,
 .shopper-plan {
   flex: 1; /* Equal width for both sections */
-  margin: 0 10px; /* Add some spacing between sections */
+  margin: 10px 10px; /* Add some spacing between sections */
   display: inline-block; /* Display sections side by side */
   vertical-align: top; /* Align sections to the top */
   background-color: #94B16F;
   border-radius: 10%;
   padding: 20px;
   max-width: 450px;
+  min-width: 400px;
   font-size: 20px;
   border-style: solid;
   border-color: #788E5B;
