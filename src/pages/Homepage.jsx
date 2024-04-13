@@ -10,8 +10,6 @@ import Lookup from '../assets/upc_lookup.jpg';
 export function Homepage() {
   return (
     <div>
-      <Header/>
-
       <main>
         <div className="features-section">
           <h3>Discover the features of KYPer!</h3>
@@ -62,8 +60,6 @@ export function Homepage() {
           </div>
         </div>
       </main>
-
-      <Footer/>
     </div>
   );
 }
