@@ -1,7 +1,5 @@
 /*Ticket 2*/
 import React from 'react';
-import Header from './Header.jsx'
-import Footer from './Footer.jsx'
 import '../css-html/index.css'
 import Market from '../assets/market.jpg';
 import Grocery from '../assets/grocery.jpg';
