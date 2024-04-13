@@ -1,4 +1,3 @@
-/*Ticket 2*/
 html {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #788E5B;
@@ -16,9 +15,10 @@ html {
 }
 
 .features {
-  display: flex; /* Make children inline */
+  display:inline-flex; /* Make children inline */
   justify-content: space-between; /* Equally distribute space between children */
-  padding: 10px
+  padding: 10px;
+
 }
 
 .features-1,
@@ -30,23 +30,34 @@ html {
   background-color: #94B16F;
   border-radius: 10%;
   padding: 20px;
+  max-width: 400px;
+  font-size: 20px;
+  border-style: solid;
+  border-color: #788E5B;
 
+}
+
+.features-1 h4, 
+.features-2 h4,
+.features-3 h4 {
+  height: 30%;
 }
 
 .features img {
   width: 100%; /* Make images fill their containers */
   max-width: 400px; /* Set a maximum width for the images */
   height: auto; /* Maintain aspect ratio */
-  
+  border-radius: 10%;
 }
 
 .payment-plans {
   text-align: center; /* Center align h3 */
   background-color: #C3E09D;
+  margin-bottom: 20px;
 }
 
 .plans {
-  display: flex;
+  display: inline-flex;
   margin-bottom: 10px;
   padding: 10px;
 }
@@ -65,8 +76,11 @@ html {
   vertical-align: top; /* Align sections to the top */
   background-color: #94B16F;
   border-radius: 10%;
-  padding: 10px;
-  max-width: 500px;
+  padding: 20px;
+  max-width: 450px;
+  font-size: 20px;
+  border-style: solid;
+  border-color: #788E5B;
 }
 
 .producer-plan h4,
@@ -78,6 +92,16 @@ html {
 .producer-plan .account-features,
 .shopper-plan .account-features {
   text-align: left;
+}
+
+.producer-plan button,
+.shopper-plan button {
+  background-color: #191d13;
+  color: #d3dbc8;
+  font-size: 20px;
+  border-radius: 20%;
+  border-style: none;
+  padding: 10px;
 }
 
 .price {
