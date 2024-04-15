@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from './Header.jsx'
-import Footer from './Footer.jsx'
 
 {/*Issue #6, Ticket #1*/}
 
@@ -42,7 +40,6 @@ const Profile = () => {
 
       <link rel="stylesheet" href="styles.css" />
 
-      <Header />
       <div className="container-fluid mt-4">
         <div className="row">
           <div className="col-md-3">
@@ -114,7 +111,6 @@ const Profile = () => {
       </div>
 
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-      <Footer/>
     </>
   );
 };

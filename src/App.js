@@ -6,11 +6,14 @@ import Profile from './pages/Profile';
 import { Login } from './pages/LoginRegister';
 import { Register } from './pages/LoginRegister';
 import SearchResults from './pages/SearchResults';
+import Header from './pages/Header';
+import Footer from './pages/Footer';
 
 function App() {
   return (
     <>
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/profile" element={<Profile />} />
@@ -23,6 +26,7 @@ function App() {
           <Route path="/" element={<SOME OTHER ROUTE ETC.... />} />
         </Routes>*/}
       </Router>
+      <Footer />
     </>
   );
 }
