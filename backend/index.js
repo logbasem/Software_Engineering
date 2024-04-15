@@ -96,6 +96,7 @@ passport.use(new LocalStrategy(
 
 // MYSQL routes!! hook up the route for tables here
 app.use('/users', require('./routes/userRoutes')); //user route
+app.use('/products', require('./routes/productRoutes')); //product routes
 
 app.listen(3000, ()=>{
     console.log("Server starting");
