@@ -1,7 +1,5 @@
 /*Ticket 2*/
 import React from 'react';
-import Header from './Header.jsx'
-import Footer from './Footer.jsx'
 import '../css-html/index.css'
 import Market from '../assets/market.jpg';
 import Grocery from '../assets/grocery.jpg';
@@ -10,11 +8,9 @@ import Lookup from '../assets/upc_lookup.jpg';
 export function Homepage() {
   return (
     <div>
-      <Header/>
-
       <main>
         <div className="features-section">
-          <h3>Discover the features of KYPer!</h3>
+          <h3>Discover the features of <span className='kyper-kyp'>KYP</span>er!</h3>
           <div className="features">
             <div className="features-1">
               <h4>Search for Local Versions of Popular Items!</h4>
@@ -62,8 +58,6 @@ export function Homepage() {
           </div>
         </div>
       </main>
-
-      <Footer/>
     </div>
   );
 }
