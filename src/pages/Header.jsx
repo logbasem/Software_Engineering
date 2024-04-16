@@ -17,7 +17,7 @@ function Header() {
           <input type="text" placeholder="Search" />
         </div>
         <div className="user-section">
-          <button>Login</button>
+          <button type='button' onClick={() => window.location.href = "/login"}>Login</button>
         </div>
       </nav>
     </header>

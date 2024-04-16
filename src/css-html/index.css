@@ -1,6 +1,5 @@
-/*Ticket 2*/
 html {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
   background-color: #788E5B;
   padding: 10px;
   height: 100%;
@@ -11,62 +10,83 @@ html {
 }
 
 .features-section h3 {
+  margin: 0% 10%;
   padding-top: 20px;
-  font-size: 25px;
+  font-size: xx-large;
+}
+
+.kyper-kyp {
+  color:red;
 }
 
 .features {
-  display: flex; /* Make children inline */
-  justify-content: space-between; /* Equally distribute space between children */
-  padding: 10px
+  display:inline-flex; /* Make children inline */
+  justify-content: space-evenly; /* Equally distribute space between children */
+  padding: 10px;
+  flex-wrap: wrap;
 }
 
 .features-1,
 .features-2,
 .features-3 {
-  flex: 1; /* Equal width for each section */
-  margin: 0 10px; /* Add some spacing between sections */
+  margin: 10px 10px; /* Add some spacing between sections */
   text-align: center; /* Center align text within each section */
   background-color: #94B16F;
-  border-radius: 10%;
-  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  min-width: 230px;
+  border-style: solid;
+  border-color: #788E5B;
+  padding: 15px;
+}
 
+.features-1 h4, 
+.features-2 h4,
+.features-3 h4 {
+  font-size: larger;
 }
 
 .features img {
-  width: 100%; /* Make images fill their containers */
+  width: 95%; /* Make images fill their containers */
   max-width: 400px; /* Set a maximum width for the images */
   height: auto; /* Maintain aspect ratio */
-  
+  border-radius: 10px;
+  margin-top: 10px;
+  border-style: solid;
+  border-color: #788E5B;
 }
 
 .payment-plans {
   text-align: center; /* Center align h3 */
   background-color: #C3E09D;
+  margin-bottom: 20px;
 }
 
 .plans {
-  display: flex;
-  margin-bottom: 10px;
+  display: inline-flex;
   padding: 10px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .payment-plans h3 {
-  padding-top: 20px;
-  margin-bottom: 20px; /* Add some space below the header */
-  font-size: 25px;
+  padding: 20px 20px 0px 20px;
+  font-size: xx-large;
 }
 
 .producer-plan,
 .shopper-plan {
   flex: 1; /* Equal width for both sections */
-  margin: 0 10px; /* Add some spacing between sections */
+  margin: 10px 10px; /* Add some spacing between sections */
   display: inline-block; /* Display sections side by side */
-  vertical-align: top; /* Align sections to the top */
   background-color: #94B16F;
-  border-radius: 10%;
-  padding: 10px;
-  max-width: 500px;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 450px;
+  min-width: 230px;
+  font-size: large;
+  border-style: solid;
+  border-color: #788E5B;
 }
 
 .producer-plan h4,
@@ -80,6 +100,16 @@ html {
   text-align: left;
 }
 
+.producer-plan button,
+.shopper-plan button {
+  background-color: #212c11;
+  color: #d3dbc8;
+  font-size: large;
+  border-radius: 10px;
+  border-style: none;
+  padding: 10px 25%;
+}
+
 .price {
-  font-size: 40px;
+  font-size: xx-large;
 }

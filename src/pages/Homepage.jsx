@@ -10,7 +10,7 @@ export function Homepage() {
     <div>
       <main>
         <div className="features-section">
-          <h3>Discover the features of KYPer!</h3>
+          <h3>Discover the features of <span className='kyper-kyp'>KYP</span>er!</h3>
           <div className="features">
             <div className="features-1">
               <h4>Search for Local Versions of Popular Items!</h4>
