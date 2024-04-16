@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Homepage from './pages/Homepage';
 import Profile from './pages/Profile';
+import { Login } from './pages/LoginRegister';
+import { Register } from './pages/LoginRegister';
+import SearchResults from './pages/SearchResults';
+/*import ProductPage from './pages/ProductPage';*/
 import Header from './pages/Header';
 import Footer from './pages/Footer';
 
@@ -13,6 +17,12 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/search-results" element={<SearchResults />} />
+          {/*<Route path="/product" element={<ProductPage />} />}*/}
+
         </Routes>
         {/*<Routes>
           <Route path="/" element={<SOME OTHER ROUTE ETC.... />} />
