@@ -6,6 +6,7 @@ import Profile from './pages/Profile';
 import { Login } from './pages/LoginRegister';
 import { Register } from './pages/LoginRegister';
 import SearchResults from './pages/SearchResults';
+/*import ProductPage from './pages/ProductPage';*/
 import Header from './pages/Header';
 import Footer from './pages/Footer';
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/search-results" element={<SearchResults />} />
+          {/*<Route path="/product" element={<ProductPage />} />}*/}
 
         </Routes>
         {/*<Routes>
