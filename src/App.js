@@ -16,17 +16,17 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Profile />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/search-results" element={<SearchResults />} />
+          {/*<Route path="/profile-settings" element={<ProfileSettings />} />
+          <Route path="//location-settings" element={<LocationSettings />} />
+          <Route path="/manage-lists" element={<ManageLists />} />
+          <Route path="/faq" element={<FAQ />} />*/}
           {/*<Route path="/product" element={<ProductPage />} />}*/}
-
         </Routes>
-        {/*<Routes>
-          <Route path="/" element={<SOME OTHER ROUTE ETC.... />} />
-        </Routes>*/}
       </Router>
       <Footer />
     </>
