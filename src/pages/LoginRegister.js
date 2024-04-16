@@ -23,12 +23,41 @@ export function Register() {
   
     return (
       <><h1 class="registerh1">Register</h1><form onSubmit={handleSubmit(onSubmit)}>
-        <input class="register" type="text" placeholder="First name" {...register("firstname", { required: true, maxLength: 80 })} />
-        <input class="register" type="text" placeholder="Last name" {...register("lastname", { required: true, maxLength: 100 })} />
-        <input class="register" type="text" placeholder="Username" {...register("username", { required: true, maxLength: 20 })} />
-        <input class="register" type="text" placeholder="Email" {...register("email", { required: true, pattern: /^\S+@\S+$/i })} />
-        <input class="register" type="password" placeholder="Password" {...register("pw", { required: true, pattern: /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$/i })} />
-  
+        <input class="register" type="text" placeholder="First name" {...register("firstname", { required: true, maxLength: 80 })} aria-invalid={errors.firstname ? "true" : "false"} />
+          {errors.firstname?.type === "required" && (
+            <p role="alert" class="lr-error">🚨 First name is required</p>
+          )}
+          {errors.firstname?.type === "maxLength" && (
+            <p role="alert" class="lr-error">🚨 First name is too long</p>
+          )}
+        <input class="register" type="text" placeholder="Last name" {...register("lastname", { required: true, maxLength: 100 })} aria-invalid={errors.lastname ? "true" : "false"} />
+          {errors.lastname?.type === "required" && (
+            <p role="alert" class="lr-error">🚨 Last name is required</p>
+          )}
+          {errors.firstname?.type === "maxLength" && (
+            <p role="alert" class="lr-error">🚨 Last name is too long</p>
+          )}
+        <input class="register" type="text" placeholder="Username" {...register("username", { required: true, maxLength: 20 })} aria-invalid={errors.username ? "true" : "false"} />
+          {errors.username?.type === "required" && (
+            <p role="alert" class="lr-error">🚨 Username is required</p>
+          )}
+          {errors.username?.type === "maxLength" && (
+            <p role="alert" class="lr-error">🚨 Username is too long</p>
+          )}
+        <input class="register" type="text" placeholder="Email" {...register("email", { required: true, pattern: /^\S+@\S+$/i })} aria-invalid={errors.email ? "true" : "false"} />
+          {errors.email?.type === "required" && (
+            <p role="alert" class="lr-error">🚨 Email is required</p>
+          )}
+          {errors.email?.type === "pattern" && (
+            <p role="alert" class="lr-error">🚨 Invalid email</p>
+          )}
+        <input class="register" type="password" placeholder="Password" {...register("pw", { required: true, pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,48}$/i})} aria-invalid={errors.pw ? "true" : "false"} />
+          {errors.pw?.type === "required" && (
+            <p role="alert" class="lr-error">🚨 Password is required</p>
+          )}
+          {errors.pw?.type === "pattern" && (
+            <p role="alert" class="lr-error">🚨 Password doesn't meet requirements: between 8-48 characters, at least one letter and one number</p>
+          )}
         <select  class="register" {...register("type")}>
           <option value="producer">Producer</option>
           <option value="shopper">Shopper</option>
@@ -59,8 +88,15 @@ export function Login() {
   
     return (
       <><h1 class="registerh1">Login</h1><form onSubmit={handleSubmit(onSubmit)}>
-        <input class="register" type="text" placeholder="Email" {...register("email", { required: true })} />
-        <input class="register" type="password" placeholder="Password" {...register("pw", { required: true })} />
+        <input class="register" type="text" placeholder="Email" {...register("email", { required: true })} aria-invalid={errors.email ? "true" : "false"} /> 
+          {errors.email?.type === "required" && (
+            <p role="alert" class="lr-error">🚨 Email is required</p>
+          )}
+
+        <input class="register" type="password" placeholder="Password" {...register("pw", { required: true })} aria-invalid={errors.pw ? "true" : "false"} />
+          {errors.pw?.type === "required" && (
+            <p role="alert" class="lr-error">🚨 Password is required</p>
+          )}
   
         <input type="submit" class="register-login-button" />
       </form></>
