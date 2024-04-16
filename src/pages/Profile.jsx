@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-
-{/*Issue #6, Ticket #1*/}
+import { Row, Col } from 'react-bootstrap';
 
 const Profile = () => {
   const profileImage =
@@ -41,8 +40,8 @@ const Profile = () => {
       <link rel="stylesheet" href="styles.css" />
 
       <div className="container-fluid mt-4">
-        <div className="row">
-          <div className="col-md-3">
+        <Row>
+          <Col md={3}>
             <div
               className="profile-card text-center bg-success text-white p-3"
               style={{ height: "100vh" }}
@@ -61,24 +60,25 @@ const Profile = () => {
               <p>Location: Biden House</p>
               <div className="list-group">
                 {[
-                  "Profile Settings",
-                  "Location Settings",
-                  "Manage Saved Lists",
-                  "FAQ",
+                  { label: "Profile Settings", link: "/profile-settings" },
+                  { label: "Location Settings", link: "/location-settings" },
+                  { label: "Manage Saved Lists", link: "/manage-lists" },
+                  { label: "FAQ", link: "/faq" },
                 ].map((item, index) => (
-                  <a
+                  <button
+                    type="button"
                     className="list-group-item list-group-item-action"
-                    href="#"
+                    onClick={() => window.location.href = item.link}
                     key={index}
                   >
                     <i className="fas fa-chevron-right"></i>
-                    {item}
-                  </a>
+                    {item.label}
+                  </button>
                 ))}
               </div>
             </div>
-          </div>
-          <div className="col-md-5">
+          </Col>
+          <Col md={5}>
             <div className="content-section">
               <div className="d-flex justify-content-between">
                 <h2 style={{ margin: "0 auto" }}>My saved lists:</h2>
@@ -100,14 +100,14 @@ const Profile = () => {
                 + Add a list...
               </p>
             </div>
-          </div>
-          <div className="col-md-1 d-flex align-items-center pe-3 border-start border-5"></div>
-          <div className="col-md-2 d-flex justify-content-between">
+          </Col>
+          <Col md={1} className="d-flex align-items-center pe-3 border-start border-5"></Col>
+          <Col md={2} className="d-flex justify-content-between">
             <h2 className="content-section" style={{ margin: "0 auto" }}>
               Stores near me:
             </h2>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </div>
 
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
