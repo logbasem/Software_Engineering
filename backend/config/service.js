@@ -86,4 +86,18 @@ const productID = 1;
 //     ),
 // };
 
-plController.getProduct(req, res);
+const req = {
+    query: {
+        searchTerm: 'dairy',
+        page: 1,
+        pageSize: 10,
+    }
+};
+const res = {
+    status: (statusCode) => ({
+        json: (data) => {
+            console.log('Response:', statusCode, data);
+        }
+    })
+}
+plController.getAllProducts(req, res);

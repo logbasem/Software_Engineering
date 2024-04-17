@@ -3,29 +3,29 @@
 //Controller for `productlocal` Table
 //model for querying
 const ProductLocal = require('../models/productLocalModel');
-const Op = require('sequelize');
+const {Op} = require('sequelize');
 
 const plController = {
 
-    //todo: still working on this
+    //todo: optimize searchTerm for barcode and other flags (vegan, local, ethical)
     //@desc query relevant products based on search keywords
     //@route GET /products/allProducts
     //@access 
     getAllProducts: async(req, res) => {
-        //get query parameters
+        //request parameters:
+        // -- searchTerm represents the users query into the searchBar
+        // -- pageSize represents the number of records to retrieve per page
+        // -- page represents the current page of the search results in frontend
         const { searchTerm, page, pageSize} = req.query 
     
         try {
             const options = {
-                //use our search keywords here
                 where: {
-                    // '%' match characters before and after
-                    // the search term allowing for partial match
                     [Op.or]: [
                     //search for any matching/similar products to query
-                     { type: {[Op.like]: '%${searchTerm}'}},
-                     { company: {[Op.like]: '%${searchTerm}'}},
-                     { barcode: {[Op.like]: '${searchTerm}'}}
+                    //searchTerm is a string so we can't check any other columns (for now)
+                        { type: {[Op.like]: `%${searchTerm}%` }},
+                        { company: {[Op.like]: `%${searchTerm}%` }},
                     ]
                 },
                 offset: (page-1) * pageSize,
@@ -33,11 +33,12 @@ const plController = {
                 //order the response by type, ascending
                 order: [
                     ['type', 'ASC']
-                ]
+                ],
+                distinct: true,
             };
             //query
             const {count, rows} = await ProductLocal.findAndCountAll(options);
-
+            console.log(rows)
             //response returns num of items, etc
             return res.status(200).json({
                 totalItems: count,

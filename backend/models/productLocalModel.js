@@ -52,7 +52,8 @@ const ProductLocal = sequelize.define('productlocal', {
     }
 }, {
         timestamps: false,
-        freezeTableName: true,
+        freezeTableName: true, 
+        //freeTableName so that sequelize does not pluralize the table name
     }
 );
 
