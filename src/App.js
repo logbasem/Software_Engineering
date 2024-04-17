@@ -7,7 +7,6 @@ import { Login } from './pages/LoginRegister';
 import { Register } from './pages/LoginRegister';
 import SearchResults from './pages/SearchResults';
 /*import ProductPage from './pages/ProductPage';*/
-import About from './pages/About';
 import Header from './pages/Header';
 import Footer from './pages/Footer';
 
@@ -27,7 +26,6 @@ function App() {
           <Route path="/manage-lists" element={<ManageLists />} />
           <Route path="/faq" element={<FAQ />} />*/}
           {/*<Route path="/product" element={<ProductPage />} />}*/}
-          <Route path="/about" element={<About />} />
         </Routes>
       </Router>
       <Footer />
