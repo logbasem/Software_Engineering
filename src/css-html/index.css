@@ -127,6 +127,7 @@ html {
 
 .about-kyper h1 {
   text-align: center;
+  color: #212c11;
 }
 
 .faq-item {
@@ -134,6 +135,7 @@ html {
   background-color: #C3E09D;
   padding: 30px;
   border-radius: 10px;
+  color: #212c11;
 }
 
 .question {
@@ -184,4 +186,5 @@ html {
 .team-spaces div p {
   text-align: center;
   font-size: larger;
+  color: #212c11;
 }
