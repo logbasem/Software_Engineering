@@ -11,7 +11,7 @@ var DataTypes = require('sequelize/lib/data-types');
 const sequelize = new Sequelize(
     dbConfig.database,
     dbConfig.user,
-    dbConfig.password
+    dbConfig.password,
     {
         host: dbConfig.host,
         dialect: "mysql",
@@ -24,7 +24,7 @@ const ProductLocal = sequelize.define('productlocal', {
     productID: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        allowNull: false, 
+        autoIncrement: true,
     },
     type: {
         type: DataTypes.STRING,
@@ -38,6 +38,9 @@ const ProductLocal = sequelize.define('productlocal', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    megaCorp: {
+        type: DataTypes.TINYINT,
+    },
     vegan: {
         type: DataTypes.TINYINT,
     },
@@ -47,6 +50,10 @@ const ProductLocal = sequelize.define('productlocal', {
     localSourced: {
         type: DataTypes.TINYINT,
     }
-});
+}, {
+        timestamps: false,
+        freezeTableName: true,
+    }
+);
 
 module.exports = ProductLocal;

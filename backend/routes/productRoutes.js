@@ -6,7 +6,8 @@ const router = express.Router();
 const plController = require('../controllers/productLocalController.js');
 
 //Routes for `productlocal` controller --------
-router.get('/allProducts', plController.getAllProducts)
+//get products by search keywords
+router.get('/searchAllProducts', plController.getAllProducts)
 
 //get one product (by id)
 router.get('/:id', plController.getProduct);
@@ -15,3 +16,4 @@ router.get('/:id', plController.getProduct);
 router.put('/update/:id', plController.updateProduct);
 
 
+module.exports = router;

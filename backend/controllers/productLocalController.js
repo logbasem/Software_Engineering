@@ -3,7 +3,7 @@
 //Controller for `productlocal` Table
 //model for querying
 const ProductLocal = require('../models/productLocalModel');
-const Op = require('./sequelize');
+const Op = require('sequelize');
 
 const plController = {
 
@@ -25,11 +25,15 @@ const plController = {
                     //search for any matching/similar products to query
                      { type: {[Op.like]: '%${searchTerm}'}},
                      { company: {[Op.like]: '%${searchTerm}'}},
-                     { barcode: {[Op.like]: '%${searchTerm}'}}
+                     { barcode: {[Op.like]: '${searchTerm}'}}
                     ]
                 },
                 offset: (page-1) * pageSize,
                 limit: pageSize, //limit number of reuslts to page size
+                //order the response by type, ascending
+                order: [
+                    ['type', 'ASC']
+                ]
             };
             //query
             const {count, rows} = await ProductLocal.findAndCountAll(options);
@@ -48,20 +52,25 @@ const plController = {
     },
 
     //@desc get one products information
-    //@route GET /products/id
+    //@route GET /products/:id
     //@access
     getProduct: async(req, res) => {
         try {
-            await ProductLocal.FindOne({
+            await ProductLocal.findAll({
                 //query by ID
                 where: {
-                    productID: req.productID
+                    productID: req.params.id
                 }
+            }).then((product) => {
+                if(!product) {
+                    return res.status(404).json({error: 'Product not found'});
+                }
+                res.status(200).json(product);
             });
         }
         catch(error) {
             console.log(error.message);
-    
+            res.status(500).json({error: 'Server Error'});
         }
     
     },
