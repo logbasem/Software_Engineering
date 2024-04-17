@@ -9,7 +9,7 @@ const plController = {
 
     //todo: optimize searchTerm for barcode and other flags (vegan, local, ethical)
     //@desc query relevant products based on search keywords
-    //@route GET /products/allProducts
+    //@route GET /products/searchAllProducts
     //@access 
     getAllProducts: async(req, res) => {
         //request parameters:
@@ -60,7 +60,7 @@ const plController = {
             await ProductLocal.findAll({
                 //query by ID
                 where: {
-                    productID: req.params.id
+                    productID: req.params.id, //get id from URL parameter
                 }
             }).then((product) => {
                 if(!product) {
@@ -77,10 +77,9 @@ const plController = {
     },
 
     //@desc update product information
-    //@route PUT /products/update/id
+    //@route PUT /products/update/:id
     updateProduct: async(req, res) =>{
         const {
-            productID,
             type,
             barcode,
             company,
@@ -94,7 +93,7 @@ const plController = {
                 {type, barcode, company, megaCorp, ethicalSourced, localSourced},
                 { 
                     where: {
-                        productID: productID,
+                        productID: req.params.id, //get id from URL parameter
                     }
                 },
                     
@@ -102,6 +101,30 @@ const plController = {
         }
         catch(error) {
             console.log(error.message);
+        }
+    },
+
+    //@desc add new local product data
+    //@route POST /products/createProduct
+    createProduct: async(req, res) => {
+        try {
+            const {type, barcode, company, megaCorp, vegan, ethicalSourced, localSourced} = req.body;
+        
+            const newProductLocal = await ProductLocal.create({
+                type,
+                barcode,
+                company,
+                megaCorp,
+                vegan, 
+                ethicalSourced,
+                localSourced
+            });
+
+            res.status(200).json({message: 'Local product created'});
+        }
+        catch(error) {
+            console.log(error);
+            res.status(500).json({error: 'Error registering user'});
         }
     },
 
