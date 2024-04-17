@@ -4,6 +4,9 @@ html {
   padding: 10px;
   height: 100%;
 }
+
+/*Homepage Styling*/
+
 .features-section {
   text-align: center; /* Center align h3 */
   background-color: #C3E09D;
@@ -16,7 +19,7 @@ html {
 }
 
 .kyper-kyp {
-  color:red;
+  color: #D61B1B;
 }
 
 .features {
@@ -108,8 +111,82 @@ html {
   border-radius: 10px;
   border-style: none;
   padding: 10px 25%;
+  cursor: pointer;
 }
 
 .price {
   font-size: xx-large;
+}
+
+/*About Page Styling*/
+
+.about-kyper {
+  background-color: #94B16F;
+  margin: 20px 0px;
+  padding: 10px;
+}
+
+.about-kyper h1 {
+  text-align: center;
+  color: #212c11;
+}
+
+.faq-item {
+  max-width: 1000px;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #C3E09D;
+  padding: 30px;
+  border-radius: 10px;
+  color: #212c11;
+}
+
+.question {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.answer {
+  padding: 10px;
+  border-left: 2px solid #788E5B;
+}
+
+.team-about {
+  background-color: #94B16F;
+  padding: 2%;
+  margin: 20px 0px;
+}
+
+.team-about h1 {
+  text-align: center;
+  color: #212c11;
+}
+
+.team-spaces {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.team-spaces div {
+  background-color: #C3E09D;
+  margin: 10px;
+  max-width: 150px;
+  border-style: solid;
+  border-color: #788E5B;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.team-spaces div a img {
+  width: 95%;
+  border-radius: 100%;
+  border-style: solid;
+  border-color: #788E5B;
+}
+
+.team-spaces div p {
+  text-align: center;
+  font-size: larger;
+  color: #212c11;
 }
