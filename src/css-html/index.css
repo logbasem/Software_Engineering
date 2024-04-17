@@ -111,6 +111,7 @@ html {
   border-radius: 10px;
   border-style: none;
   padding: 10px 25%;
+  cursor: pointer;
 }
 
 .price {
@@ -121,7 +122,7 @@ html {
 
 .about-kyper {
   background-color: #94B16F;
-  margin: 20px -8px;
+  margin: 20px 0px;
   padding: 10px;
 }
 
@@ -131,6 +132,8 @@ html {
 }
 
 .faq-item {
+  max-width: 1000px;
+  margin: auto;
   margin-bottom: 10px;
   background-color: #C3E09D;
   padding: 30px;
@@ -151,7 +154,7 @@ html {
 .team-about {
   background-color: #94B16F;
   padding: 2%;
-  margin: 20px -8px;
+  margin: 20px 0px;
 }
 
 .team-about h1 {
@@ -160,8 +163,8 @@ html {
 }
 
 .team-spaces {
-  display:inline-flex;
-  justify-content: space-evenly;
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -169,7 +172,6 @@ html {
   background-color: #C3E09D;
   margin: 10px;
   max-width: 150px;
-  max-height: fit-content;
   border-style: solid;
   border-color: #788E5B;
   border-radius: 10px;

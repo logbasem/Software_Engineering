@@ -25,10 +25,10 @@ function About() {
     ];
     
     return (
-        <body>
+        <main>
             <div className="about-kyper">
                 <h1>About <span className="kyper-kyp">KYP</span>er</h1>
-                <div classname="faq-box">
+                <div className="faq-box">
                     {faqItems.map((item, index) => (
                         <div key={index} className="faq-item">
                             <li className="question" onClick={() => toggleExpand(index)}>
@@ -42,37 +42,37 @@ function About() {
             <div className="team-about">
                 <h1>Come Meet Group N Over on GitHub!</h1>
                 <div className="team-spaces">
-                    <div classname="box-1">
+                    <div className="box-1">
                         <a href="https://github.com/baron-git"><img src="https://avatars.githubusercontent.com/u/76495335?v=4"/></a>
                         <p>baron-git</p>
                     </div>
-                    <div classname="box-2">
+                    <div className="box-2">
                         <a href="https://github.com/EnosKakwambi"><img src="https://avatars.githubusercontent.com/u/123114197?v=4"/></a>
                         <p>EnosKakwambi</p>
                     </div>
-                    <div classname="box-3">
+                    <div className="box-3">
                         <a href="https://github.com/logbasem"><img src="https://avatars.githubusercontent.com/u/7990867?v=4"/></a>
                         <p>logbasem</p>
                     </div>
-                    <div classname="box-4">
+                    <div className="box-4">
                         <a href="https://github.com/Brianna-P"><img src="https://avatars.githubusercontent.com/u/124546519?v=4"/></a>
                         <p>Brianna-P</p>
                     </div>
-                    <div classname="box-5">
+                    <div className="box-5">
                         <a href="https://github.com/kpe03"><img src="https://avatars.githubusercontent.com/u/99045807?v=4"/></a>
                         <p>kpe03</p>
                     </div>
-                    <div classname="box-6">
+                    <div className="box-6">
                         <a href="https://github.com/jstays"><img src="https://avatars.githubusercontent.com/u/98559350?v=4"/></a>
                         <p>jstays</p>
                     </div>
-                    <div classname="box-7">
+                    <div className="box-7">
                         <a href="https://github.com/Nithomps"><img src="https://avatars.githubusercontent.com/u/123123306?v=4"/></a>
                         <p>Nithomps</p>
                     </div>
                 </div>
             </div>
-        </body>
+        </main>
     );
 }
 
