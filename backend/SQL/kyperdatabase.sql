@@ -9,7 +9,6 @@
 -- Table for userdata
 -- Created by Kaitlyn Peters
 -- MySQL version 8.0.36
--- Creates a table with rows: id, username, userpassword, email, first_name, last_name
 
 CREATE TABLE `userdata` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -29,3 +28,28 @@ INSERT INTO `kyper`.`userdata` (`id`, `username`, `userpassword`, `email`, `firs
 ('2', 'test2', 'test2', 'test2@test.com', 'Test', 'Account');
 
 ALTER TABLE userdata MODIFY userpassword varchar(255);
+
+-- --------------
+-- ProductLocal
+-- --------------
+
+CREATE TABLE IF NOT EXISTS `ProductLocal` (
+  `productID` INT NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(45) NOT NULL,
+  `barcode` INT NOT NULL,
+  `company` VARCHAR(45) NOT NULL,
+  `megaCorp` TINYINT NULL DEFAULT NULL COMMENT 'NULL is unknown',
+  `vegan` TINYINT NULL DEFAULT NULL COMMENT 'NULL is unknown',
+  `ethicalSourced` TINYINT NULL DEFAULT NULL COMMENT 'NULL is unknown',
+  `localSourced` TINYINT NULL DEFAULT NULL COMMENT 'NULL is unknown',
+  PRIMARY KEY (`productID`),
+  UNIQUE INDEX `productID_UNIQUE` (`productID` ASC) VISIBLE)
+ENGINE = InnoDB AUTO_INCREMENT = 1;
+-- wasn't working because linestring is a spatial data type therefore productID and company could NOT
+-- be composite primary keys
+
+-- insert test data
+INSERT INTO `productlocal`(`productID`, `type`, `barcode`, `company`, `megaCorp`, `vegan`, `ethicalSourced`, `localSourced`) VALUES
+('1', 'Dairy', '12432', 'Hilland', 0, 0, 0, 0);
+INSERT INTO `productlocal`(`productID`, `type`, `barcode`, `company`, `megaCorp`, `vegan`, `ethicalSourced`, `localSourced`) VALUES
+('2', 'Chocolate Milk', '232415', 'Dairy', 0, 0, 0, 0);

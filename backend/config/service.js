@@ -86,19 +86,24 @@ const productID = 1;
 //     ),
 // };
 
-// const req = {
-//     query: {
-//         searchTerm: 'dairy',
-//         page: 1,
-//         pageSize: 10,
-//     }
-// };
-// const res = {
-//     status: (statusCode) => ({
-//         json: (data) => {
-//             console.log('Response:', statusCode, data);
-//         }
-//     })
-// }
+const req = {
+    body: {
+        type: 'dairy',
+        barcode: '123',
+        company: 'a',
+        megaCorp: '0',
+        vegan: '0',
+        ethicalSourced: '0',
+        localSourced:'0',
+    }
+};
+const res = {
+    status: (statusCode) => ({
+        json: (data) => {
+            console.log('Response:', statusCode, data);
+        }
+    })
+}
 
-plController.getAllProducts(req, res);
+
+plController.createProduct(req, res);

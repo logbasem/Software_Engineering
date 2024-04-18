@@ -96,7 +96,6 @@ const plController = {
                         productID: req.params.id, //get id from URL parameter
                     }
                 },
-                    
             );
         }
         catch(error) {
@@ -110,7 +109,7 @@ const plController = {
         try {
             const {type, barcode, company, megaCorp, vegan, ethicalSourced, localSourced} = req.body;
         
-            const newProductLocal = await ProductLocal.create({
+            await ProductLocal.create({
                 type,
                 barcode,
                 company,
@@ -124,7 +123,7 @@ const plController = {
         }
         catch(error) {
             console.log(error);
-            res.status(500).json({error: 'Error registering user'});
+            res.status(500).json({error: 'Error creating product'});
         }
     },
 
