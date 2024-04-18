@@ -1,25 +1,27 @@
 import React from 'react';
 import '../css-html/product-page.css';
+import Dora from '../assets/map-dora.jpg';
+import Evil from '../assets/resident-evil-food.jpg'
 
 function Product() {
   return (
   
     <div>
-        // {/*Main content of the page. Depends on the page you are designing*/}
+        {/*Main content of the page. Depends on the page you are designing*/}
         <div className="content">
             <div className="left-side">
                 <div className="product">
                         <p>
                             Name of Product
                         </p>
-                        <div className="productimageholder"><img className="productimage" src="../assets/resident-evil-food.jpg" />
+                        <div className="productimageholder"><img className="productimage" src= { Evil } />
                         </div>
                 </div>
                 <div className="map">
                         <p>
                             Locations Near You
                         </p>
-                        <div className="mapimageholder"><img className="mapimage" src="../assets/map-dora.jpg" />
+                        <div className="mapimageholder"><img className="mapimage" src= { Dora }/>
                         </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ import Profile from './pages/Profile';
 import { Login } from './pages/LoginRegister';
 import { Register } from './pages/LoginRegister';
 import SearchResults from './pages/SearchResults';
-/*import ProductPage from './pages/ProductPage';*/
+import Product from './pages/Product';
 import About from './pages/About';
 import Header from './pages/Header';
 import Footer from './pages/Footer';
@@ -26,7 +26,7 @@ function App() {
           <Route path="//location-settings" element={<LocationSettings />} />
           <Route path="/manage-lists" element={<ManageLists />} />
           <Route path="/faq" element={<FAQ />} />*/}
-          {/*<Route path="/product" element={<ProductPage />} />}*/}
+          <Route path="/product" element={<Product />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </Router>
