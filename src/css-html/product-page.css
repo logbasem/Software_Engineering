@@ -1,4 +1,6 @@
 /*Ticket7*/
+
+/*COMMENTED OUT BECAUSE product-page.html WAS CONVERTED TO JSX
 body, html{
     size: 100%;
     margin: 0;
@@ -106,6 +108,9 @@ body{
     flex: 1;
     overflow: auto;
 }
+*/
+
+
 .content{
     background-color:#FAF9F6;
     flex: 1;
