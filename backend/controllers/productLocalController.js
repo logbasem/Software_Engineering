@@ -97,6 +97,8 @@ const plController = {
                     }
                 },
             );
+
+            res.status(200).json({message: 'Local product updated'})
         }
         catch(error) {
             console.log(error.message);

@@ -87,8 +87,9 @@ const productID = 1;
 // };
 
 const req = {
+    params: {id: 3},
     body: {
-        type: 'dairy',
+        type: 'notdairy',
         barcode: '123',
         company: 'a',
         megaCorp: '0',
@@ -106,4 +107,4 @@ const res = {
 }
 
 
-plController.createProduct(req, res);
+plController.updateProduct(req, res);
