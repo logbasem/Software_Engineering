@@ -5,23 +5,10 @@
 
 //get users local db configuration
 const dbConfig = require('../config/dbConfig.js');
-//use sequelize to create the model
-const Sequelize = require('sequelize');
-var DataTypes = require('sequelize/lib/data-types');
+//sequelize instantiation
+const sequelize = require('./sequelize'); 
 
-//passing parameters of db config
-const sequelize = new Sequelize(
-    dbConfig.database,
-    dbConfig.user,
-    dbConfig.password,
-    //db options
-    {
-        host: dbConfig.host,
-        dialect: "mysql",
-        logging: console.log
-    },
-    
-);
+var DataTypes = require('sequelize/lib/data-types');
 
 //Create user model
 const User = sequelize.define('userdata', {
