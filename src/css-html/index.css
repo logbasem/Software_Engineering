@@ -1,6 +1,14 @@
+:root {
+  --first-color: #38A869; 
+  --second-color: hwb(187 52% 20%); 
+  --third-color: hsla(12, 75%, 52%, 0.679); 
+  --light-color: #FDE9D8;
+  --dark-color: #232B2F;
+}
+
 html {
   font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-  background-color: #788E5B;
+  background-color: var(--dark-color); /*HERE IS HOW YOU SET THE COLOR*/
   padding: 10px;
   height: 100%;
 }
