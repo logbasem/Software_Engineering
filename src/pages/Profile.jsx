@@ -1,5 +1,7 @@
+
 import React, { useState } from "react";
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col } from "react-bootstrap";
+import "../css-html/index.css";
 
 const Profile = () => {
   const profileImage =
@@ -43,8 +45,11 @@ const Profile = () => {
         <Row>
           <Col md={3}>
             <div
-              className="profile-card text-center bg-success text-white p-3"
-              style={{ height: "100vh" }}
+              className="profile-card text-center text-white p-3"
+              style={{
+                height: "100vh",
+                backgroundColor: "var(--first-color)",
+              }}
             >
               <img
                 alt="Placeholder image of Joe Biden"
@@ -68,7 +73,7 @@ const Profile = () => {
                   <button
                     type="button"
                     className="list-group-item list-group-item-action"
-                    onClick={() => window.location.href = item.link}
+                    onClick={() => (window.location.href = item.link)}
                     key={index}
                   >
                     <i className="fas fa-chevron-right"></i>
@@ -101,7 +106,10 @@ const Profile = () => {
               </p>
             </div>
           </Col>
-          <Col md={1} className="d-flex align-items-center pe-3 border-start border-5"></Col>
+          <Col
+            md={1}
+            className="d-flex align-items-center pe-3 border-start border-5"
+          ></Col>
           <Col md={2} className="d-flex justify-content-between">
             <h2 className="content-section" style={{ margin: "0 auto" }}>
               Stores near me:
