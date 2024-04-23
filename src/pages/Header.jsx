@@ -17,6 +17,18 @@ function Header() {
     setShowUserProfile(!showUserProfile);
   }
 
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    // Redirect to /search-results
+    window.location.href = `/search-results`;
+  };
+
+  const handleChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
   return (
     <header className="header">
       <img src={KYPerLogo} alt="KYPer Logo" className="logo"/>
@@ -26,9 +38,10 @@ function Header() {
           <li><a href="/about">About</a></li>
           <li><a href="/grocery-list">Lists</a></li>
           <li>
-            <div className="search-bar">
-              <input className="search" type="text" placeholder="Search" />
-            </div>
+            <form className="search-bar" onSubmit={handleSearch}>
+              <input className="search" type="search" placeholder="Search" value={searchQuery} onChanges={handleChange}/>
+              <button type='submit'>&#x1F50E;</button>
+            </form>
           </li>
           <li>
             <div className={`user-section ${showUserProfile ? 'show' : 'hide'}`}>

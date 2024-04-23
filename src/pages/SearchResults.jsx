@@ -28,14 +28,14 @@ export const SearchResults = () => {
             <h2>Results:</h2>
             <div className="search-results">
                 {searchResults.map((searchResult) => (
-                    <div key={searchResult.id} className="search-result">
+                    <a href='/product'><div key={searchResult.id} className="search-result">
                         <div>{searchResult.name}</div>
                         <div className="product-info">{searchResult.info}</div>
                         <button onClick={() => handleAddToList(searchResult.id)} className="add-to-list-button">
                             <span>+ </span>
                             <span>Add to List</span>
                         </button>
-                    </div>
+                    </div></a>
                 ))}
             </div>
         </div>
