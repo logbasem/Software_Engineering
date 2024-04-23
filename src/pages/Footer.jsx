@@ -6,8 +6,8 @@ import KYPerLogo from '../assets/KYPer Logo.png';
 function Footer() {
   return (
     <footer className="footer">
-      <img className="logo" src= { KYPerLogo }/>
-      <p className="copyright">Group N &copy; 2024, All Right Reserved</p>
+      <img className="logo" src= { KYPerLogo } alt='KYPer Logo'/>
+      <p className="copyright">Group N &copy; 2024, All Rights Reserved</p>
     </footer>
   );
 }
