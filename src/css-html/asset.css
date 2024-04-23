@@ -1,7 +1,15 @@
 /* Ticket 2 */
+:root {
+  --first-color: #38A869; 
+  --second-color: hwb(187 52% 20%); 
+  --third-color: hsla(12, 75%, 52%, 0.679); 
+  --light-color: #FDE9D8;
+  --dark-color: #232B2F;
+}
+
 .header,
 .footer {
-  background-color: #94B16F;
+  background-color: var(--first-color);
 
 }
 
@@ -10,19 +18,30 @@
   position: sticky;
   display: inline-flex;
   width: 100%;
+  align-items: center;
 }
 
 .header .logo {
   margin: 20px;
   margin-right: auto; /* Pushes the logo to the far left */
   max-width: 200px;
+  background-color: var(--light-color);
+  border-style: dotted;
+  border-color: var(--dark-color);
+  border-radius: 15px;
 }
   
 .nav {
   display: flex;
   align-items: center;
   margin-right: 30px;
+  margin-left: 10px;
+  padding: 10px;
   font-size: x-large;
+  height: 60px;
+  border-style: dotted;
+  border-radius: 15px;
+  background-color: var(--light-color);
 }
   
 .nav ul {
@@ -39,7 +58,7 @@
   
 .nav a {
   text-decoration: none; /* Remove underline */
-  color: #333; /* Change link color */
+  color: var(--dark-color); /* Change link color */
 }
   
 .search-bar,
@@ -48,12 +67,13 @@
 }
 
 .search-bar input[type="text"] {
-  font-size: 17px; 
+  font-size: 17px;
+  color: var(--dark-color);
 }
 
 .user-section button {
-  background-color: #191d13;
-  color: #d3dbc8;
+  background-color: var(--dark-color);
+  color: var(--light-color);
   font-size: 20px;
   border-radius: 30%;
   border-style: none;
@@ -86,21 +106,15 @@
   .profile-button {
     display: none;
   }
-  /*.login-button {
-    display: block;
-  }*/
 }
 
 .user-section.show {
-  /*.profile-button {
-    display: block;
-  }*/
   .login-button {
     display: none;
   }
 }
 
-@media (max-width: 824px) {
+@media (max-width: 880px) {
   .nav-list.hide {
     display: none;
   }
@@ -144,7 +158,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
-  max-height: 40px;
+  max-height: 60px;
   align-items: center;
   margin-top: 10px;
 }
@@ -152,4 +166,8 @@
 .footer .logo {
   max-width: 100px;
   height: fit-content;
+  background-color: var(--light-color);
+  border-style: dotted;
+  border-color: var(--dark-color);
+  border-radius: 15px;
 }
