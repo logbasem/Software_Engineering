@@ -1,4 +1,5 @@
 /*Ticket 2*/
+import "../css-html/index.css";
 import React, { useState } from 'react';
 import '../css-html/asset.css';
 import KYPerLogo from '../assets/KYPer Logo.png';

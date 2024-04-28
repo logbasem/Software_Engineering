@@ -1,7 +1,9 @@
 /* Ticket 2 */
+
 .header,
 .footer {
-  background-color: #94B16F;
+  background-color: var(--medium-color);
+
 
 }
 
