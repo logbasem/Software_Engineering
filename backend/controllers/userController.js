@@ -98,11 +98,14 @@ const userController = {
     // @access Private
     register: async (req, res) => {
         try {
+            console.log("Register user");
             //extract user data from request body
-            const {username, enteredPassword, first_name, last_name, email} = req.body;
+            const {first_name, last_name, username, email, enteredPassword} = req.body;
+            //test user info
+            console.log(first_name, last_name, username, email, enteredPassword);
             //hash/salt the password
             const userpassword = await hashPassword(enteredPassword);
-   
+            
             //Create a new user instance (using sequelize)
             //note: all queries must be NON NULL!
             const newUser = await User.create({
