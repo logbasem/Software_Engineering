@@ -106,6 +106,7 @@ export function Register() {
   
 export function Login() {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [loginMessage, setLoginMessage] = useState(false);
     // const onSubmit = data => alert(JSON.stringify(data)); //Puts data into JSON form and then shows alert box containing data
     // console.log(errors); // Logs any errors to browser console
     
@@ -136,11 +137,13 @@ export function Login() {
     
         if(response.ok) {
           console.log('Login successful');
+          setLoginMessage(true);
         }
     
         return response;
       } catch (error) {
         console.error('Login error', error);
+        setLoginMessage(false);
         }
       } 
 
@@ -157,7 +160,13 @@ export function Login() {
           )}
   
         <input type="submit" class="register-login-button" />
-      </form></>
+      </form>
+      
+      <div>
+        {loginMessage &&
+        <p className='success-message'>Login Successful</p>}
+      </div>
+      </>
     );
   }
   
