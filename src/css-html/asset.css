@@ -4,14 +4,13 @@
 .footer {
   background-color: var(--medium-color);
 
-
 }
 
 .header {
-  margin-bottom: 20px;
   position: sticky;
   display: inline-flex;
   width: 100%;
+  color: var(--dark-color);
 }
 
 .header .logo {
@@ -41,7 +40,7 @@
   
 .nav a {
   text-decoration: none; /* Remove underline */
-  color: #333; /* Change link color */
+  color: var(---color); /* Change link color */
 }
   
 .search-bar,
@@ -54,8 +53,8 @@
 }
 
 .user-section button {
-  background-color: #191d13;
-  color: #d3dbc8;
+  background-color: var(--third-color);
+  color: var(--text-color);
   font-size: 20px;
   border-radius: 30%;
   border-style: none;
@@ -105,6 +104,7 @@
 @media (max-width: 824px) {
   .nav-list.hide {
     display: none;
+    
   }
 
   .search {
@@ -127,11 +127,11 @@
     top: 100%;
     right: 0;
     width: 70%;
-    background-color:#94B16F;
+    background-color:var(--first-color);
     padding: 10px 0;
     text-align: center;
     border-style: solid;
-    color: #3e4a2e;
+    color: var(--third-color);
     font-size: larger;
   }
 
@@ -143,6 +143,7 @@
 }
 
 .footer {
+  color: var(--dark-color);
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;

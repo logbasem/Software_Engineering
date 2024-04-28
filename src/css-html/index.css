@@ -1,19 +1,22 @@
 :root {
   /*Main Colors*/
-  --first-color: #3c692a; 
-  --first-color-opaque: #41772bd7; 
+  /*Greens*/
+  --first-color: #50803f; 
+  --first-color-opaque: #50803fc3; 
   --first-color2: #222d1e; 
 
-  --second-color: #ef784e; 
-  --second-color2: #e6511a;
+   /*Orange/red*/
+  --second-color: #e6511a;
 
-  --third-color: #1f3c35;
+  /*Bluish green*/
+  --third-color: #26463f;
+  --third-color2: #59ab98;
 
   /*Neutral and text colors*/
-  --light-color: #FDE3CE;
+  --light-color: #fff0e3;
   --light-color2: #d4baa5;
 
-  --medium-color: #9f9982;
+  --medium-color: #695d53;
 
   --text-color:#f4ede8;
 
@@ -55,10 +58,9 @@ html {
   4px 4px 8px var(--dark-color); /* Third shadow layer */
   
 }
-
 .kyper-kyp {
   /*color: #D61B1B;*/
-  color: var(--light-color)
+  color: var(--second-color)
 }
 
 .features {
@@ -105,7 +107,7 @@ html {
 .payment-plans {
   text-align: center; /* Center align h3 */
   background-color: var(--third-color);
-  margin-bottom: 20px;
+  padding-bottom: 10px;
   color: var(--light-color2);
   box-shadow: var(--dark-color) 0 4px 6px;
 }
@@ -172,12 +174,13 @@ html {
 /*About Page Styling*/
 
 .about-kyper {
-  background-color: var(--light-color);
-  margin: 20px 0px;
+  background-color: var(--light-color2);
   padding: 10px;
+  box-shadow: var(--dark-color) 4px 4px 8px;
 }
 
 .about-kyper h1 {
+  padding-top: 10px;
   text-align: center;
   color: var(--dark-color);
 }
@@ -189,7 +192,8 @@ html {
   background-color: var(--third-color);
   padding: 30px;
   border-radius: 10px;
-  color: var(--dark-color);
+  color: var(--text-color);
+  box-shadow: var(--dark-color) 4px 4px 8px;
 }
 
 .question {
@@ -199,18 +203,21 @@ html {
 
 .answer {
   padding: 10px;
-  border-left: 2px solid var(--light-color2);
+  border-left: 2px solid var(--second-color);
 }
 
 .team-about {
-  background-color: var(--light-color);
+  background-color: var(--light-color2);
   padding: 2%;
   margin: 20px 0px;
+  box-shadow: var(--dark-color) 4px 4px 8px;
+  
 }
 
 .team-about h1 {
   text-align: center;
   color: var(--dark-color);
+  
 }
 
 .team-spaces {
@@ -220,13 +227,14 @@ html {
 }
 
 .team-spaces div {
-  background-color: var(--third-color);
+  background-color: var(--first-color-opaque);
   margin: 10px;
   max-width: 150px;
   border-style: solid;
-  border-color: var(--medium-color2);
+  border-color: var(--first-color);
   border-radius: 10px;
   padding: 5px;
+  box-shadow: var(--third-color) 0 0 6px;
 }
 
 .team-spaces div a img {
