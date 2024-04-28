@@ -26,9 +26,10 @@ function Header() {
           <li><a href="/about">About</a></li>
           <li><a href="/grocery-list">Lists</a></li>
           <li>
-            <div className="search-bar">
-              <input className="search" type="text" placeholder="Search" />
-            </div>
+            <form className="search-bar" onSubmit={handleSearch}>
+              <input className="search" type="search" placeholder="Search" value={searchQuery} onChange={handleChange}/>
+              <button type='submit'>&#x1F50E;</button>
+            </form>
           </li>
           <li>
             <div className={`user-section ${showUserProfile ? 'show' : 'hide'}`}>
