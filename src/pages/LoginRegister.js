@@ -10,6 +10,17 @@ export function Register() {
     // console.log(errors); // Logs any errors to browser console
     const [successMessage, setSuccessMessage] = useState(false); 
     
+    {/* api endpoint functionality */}
+    {/* action="/users/register" // Send post request with the FormData
+             encType={'application/json'} you can also switch to json object
+             onSuccess={() => {
+               alert("Your application is updated.")
+             }}
+             onError={() => {
+              alert("Submission has failed.")
+            }}
+             control={control} > */}
+
     //method to create request to api
     const onSubmit = async (data) => {
       try {
@@ -37,20 +48,7 @@ export function Register() {
   
     return (
       <><h1 class="registerh1">Register</h1>
-
-        {/* api endpoint functionality */}
         <form onSubmit={handleSubmit(onSubmit)}>
-          
-            {/* action="/users/register" // Send post request with the FormData
-             encType={'application/json'} you can also switch to json object
-             onSuccess={() => {
-               alert("Your application is updated.")
-             }}
-             onError={() => {
-              alert("Submission has failed.")
-            }}
-             control={control} > */}
-
         <input class="register" type="text" placeholder="First name" {...register("first_name", { required: true, maxLength: 80 })} aria-invalid={errors.firstname ? "true" : "false"} />
           {errors.firstname?.type === "required" && (
             <p role="alert" class="lr-error">🚨 First name is required</p>
@@ -108,8 +106,8 @@ export function Register() {
   
 export function Login() {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => alert(JSON.stringify(data)); //Puts data into JSON form and then shows alert box containing data
-    console.log(errors); // Logs any errors to browser console
+    // const onSubmit = data => alert(JSON.stringify(data)); //Puts data into JSON form and then shows alert box containing data
+    // console.log(errors); // Logs any errors to browser console
     
     /* Insert after "<form" to add API endpoint functionality 
     
@@ -122,7 +120,30 @@ export function Login() {
           alert("Submission has failed.")
         }}
         control={control}*/
-  
+
+    //send request to /users/login
+    const onSubmit = async (data) => {
+      try {
+        console.log('Form data:', data); //print the json data
+        //send a response to api
+        const response = await fetch('http://localhost:3001/users/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+    
+        if(response.ok) {
+          console.log('Login successful');
+        }
+    
+        return response;
+      } catch (error) {
+        console.error('Login error', error);
+        }
+      } 
+
     return (
       <><h1 class="registerh1">Login</h1><form onSubmit={handleSubmit(onSubmit)}>
         <input class="register" type="text" placeholder="Email" {...register("email", { required: true })} aria-invalid={errors.email ? "true" : "false"} /> 
@@ -130,8 +151,8 @@ export function Login() {
             <p role="alert" class="lr-error">🚨 Email is required</p>
           )}
 
-        <input class="register" type="password" placeholder="Password" {...register("pw", { required: true })} aria-invalid={errors.pw ? "true" : "false"} />
-          {errors.pw?.type === "required" && (
+        <input class="register" type="password" placeholder="Password" {...register("userpassword", { required: true })} aria-invalid={errors.userpassword ? "true" : "false"} />
+          {errors.userpassword?.type === "required" && (
             <p role="alert" class="lr-error">🚨 Password is required</p>
           )}
   
