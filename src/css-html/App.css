@@ -170,3 +170,11 @@ p.lr-error {
   color: #ff6262;
   text-shadow: 2px 1px 2px rgb(56, 56, 56);
 }
+
+.success-message {
+  text-align: center;
+  font-size: 24px;
+  width: 100%;
+  color: #afcf84;
+  text-shadow: 2px 1px 2px rgb(56, 56, 56);
+}

@@ -9,7 +9,7 @@ import BannerImage from "../assets/banner.jpg"; // Import the banner image
 
 export function Homepage() {
   return (
-    <div className = "all">
+    <div classname = "all">
       <main>
         <div
           className="carousel-container"

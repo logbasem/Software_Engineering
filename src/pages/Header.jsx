@@ -1,4 +1,5 @@
 /*Ticket 2*/
+import "../css-html/index.css";
 import React, { useState } from 'react';
 import '../css-html/asset.css';
 import KYPerLogo from '../assets/KYPer Logo.png';
@@ -17,6 +18,18 @@ function Header() {
     setShowUserProfile(!showUserProfile);
   }
 
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    // Redirect to /search-results
+    window.location.href = `/search-results`;
+  };
+
+  const handleChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
   return (
     <header className="header">
       <img src={KYPerLogo} alt="KYPer Logo" className="logo"/>
@@ -27,7 +40,7 @@ function Header() {
           <li><a href="/grocery-list">Lists</a></li>
           <li>
             <form className="search-bar" onSubmit={handleSearch}>
-              <input className="search" type="search" placeholder="Search" value={searchQuery} onChange={handleChange}/>
+              <input className="search" type="search" placeholder="Search" value={searchQuery} onChanges={handleChange}/>
               <button type='submit'>&#x1F50E;</button>
             </form>
           </li>

@@ -33,16 +33,16 @@ module.exports = function(passport, user) {
     //passport configuration
     passport.use(new LocalStrategy(
         {
-            usernameField: "username",
+            usernameField: "email",
             passwordField: "userpassword",
             passReqToCallback: true,
         },
-        async function(req, username, password, done) {
+        async function(req, email, password, done) {
             //query the entered username
             User.findOne({
                 where:
                    { 
-                    username: username,
+                    email: email,
                 },
             }).then(function (user) {
                 //check if user exists
