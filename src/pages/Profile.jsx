@@ -41,7 +41,10 @@ const Profile = () => {
 
       <link rel="stylesheet" href="styles.css" />
 
-      <div className="container-fluid mt-4">
+      <div className="container-fluid"
+      style={{
+        backgroundColor: "var(--dark-color)",
+      }}>
         <Row>
           <Col md={3}>
             <div
@@ -84,34 +87,34 @@ const Profile = () => {
             </div>
           </Col>
           <Col md={5}>
-            <div className="content-section">
+            <div className="content-section  pt-4">
               <div className="d-flex justify-content-between">
-                <h2 style={{ margin: "0 auto" }}>My saved lists:</h2>
+                <h2 style={{ margin: "0 auto", color: "var(--light-color)" }}>My saved lists:</h2>
               </div>
               {lists.map((list, index) => (
                 <div key={index} className="list-box">
-                  <h3 className="fs-4">{list.name}</h3>
+                  <h3 className="fs-4" style={{color: "var(--light-color)" }}>{list.name}</h3>
                   {list.items.map((item, itemIndex) => (
-                    <p className="mb-1" key={itemIndex}>
+                    <p className="mb-1" style={{color: "var(--light-color2)" }} key={itemIndex}>
                       {item}
                     </p>
                   ))}
-                  <p className="add-item" onClick={() => handleAddItem(index)}>
+                  <p className="add-item" style={{color: "var(--light-color)" }} onClick={() => handleAddItem(index)}>
                     + Add item...
                   </p>
                 </div>
               ))}
-              <p className="mt-5 add-list" onClick={handleAddList}>
+              <p className="mt-5 add-list" style={{color: "var(--light-color)" }} onClick={handleAddList}>
                 + Add a list...
               </p>
             </div>
           </Col>
           <Col
             md={1}
-            className="d-flex align-items-center pe-3 border-start border-5"
+            className="d-flex align-items-center pe-3 border-start border-5 border-success "
           ></Col>
-          <Col md={2} className="d-flex justify-content-between">
-            <h2 className="content-section" style={{ margin: "0 auto" }}>
+          <Col md={2} className="d-flex justify-content-between pt-4">
+            <h2 className="content-section" style={{ margin: "0 auto", color: "var(--light-color)" }}>
               Stores near me:
             </h2>
           </Col>

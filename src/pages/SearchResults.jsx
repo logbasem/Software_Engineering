@@ -1,6 +1,7 @@
 //Ticket #13
 import React, { useEffect, useState } from "react";
 import '../css-html/SearchResults.css';
+import "../css-html/index.css";
 
 //component reference from Chinedu Imoh at: https://www.telerik.com/blogs/how-to-implement-standard-search-using-react
 //this is specifically a component configured to work with express, so should be relatively simple

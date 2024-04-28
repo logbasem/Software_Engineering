@@ -3,7 +3,10 @@
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    background-color: #fff;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding-top: 20px;
+  
   }
   
   .search-results {
@@ -14,11 +17,13 @@
   
   .search-result {
     text-align: center;
-    border: 1px solid #ccc;
+    border: 2px solid var(--light-color2);
     padding: 10px;
     width: 200px;
-    color:black;
-    background-color: #fff;
+    font-weight:bold;
+    color:var(--dark-color);
+    background-color: var(--text-color);
+    padding-bottom: 20px;
   }
   
   .add-to-list-button {
@@ -26,15 +31,15 @@
     justify-content: center;
     padding: 5px;
     font-size: 14px;
-    background-color: #94B16F;
-    color: #fff;
+    background-color: var(--first-color);
+    color: var(--text-color);
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
   }
   
   .add-to-list-button:hover {
-    background-color: #94B16F;
+    background-color: var(--first-color-opaque);
   }
   
   .add-to-list-button span:first-child {
@@ -49,12 +54,12 @@
   .result-divider {
     width: 100%;
     margin: 10px 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--light-color);
   }
   
   .product-info {
     font-size: 12px;
     font-style: italic;
     margin-bottom: 5px;
-    color:black;
+    color:var(--dark-color);
   }
