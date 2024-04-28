@@ -3,7 +3,7 @@
 // Kaitlyn Peters
 
 //node js and express js to connect to mySQL database
-// import express from "express";
+//libraries
 const express = require('express');
 const mysql = require('mysql');
 const dotenv = require('dotenv');
@@ -12,12 +12,16 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
+const cors = require('cors');
+
 const app = express();
+const PORT = 3001;
 
 //get environment variables from .env file
 require('dotenv').config();
 
 app.use(bodyParser.json()); //so that app can parse json requests
+
 //set up sessions
 app.use(session({
     secret: 'secretstringforsomething',
@@ -27,6 +31,12 @@ app.use(session({
         maxAge: 12 * 60 * 60 * 1000, //12 hours
     }
 }))
+
+//set up cors
+app.use(cors({
+    origin: 'http://localhost:3000'
+}));
+
 //configure Passport for authentication
 app.use(passport.initialize());
 app.use(passport.session());
@@ -39,6 +49,6 @@ require('./config/passportConfig')(passport, User);
 app.use('/users', require('./routes/userRoutes')); //user route
 app.use('/products', require('./routes/productRoutes')); //product routes
 
-app.listen(3000, ()=>{
-    console.log("Server starting");
+app.listen(PORT, ()=>{
+    console.log(`Server starting on http://localhost:${PORT}`);
 });

@@ -15,10 +15,20 @@ how to differentiate real businesses from fake ones_).
 Not applicable 
 
 ## To Run
-_Instructions on how to start the web server and how to access it. Include how to run automated and manual tests after committing changes_
+In the terminal, click the split terminal button.
+On one side, cd into src.
+On the other, cd into backend.
 
-#### Starting the backend for local development
-To start the backend, cd into the backend folder and use:
+In each split terminal, install dependencies using:
+``` npm install ```
+
+
+### For Frontend
+Use command:
+``` npm start ```
+
+#### For Backend
+Use command:
 ``` npm start ```
 
 ## PR Requirements For Merging
