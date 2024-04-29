@@ -22,8 +22,22 @@ function Header() {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    // Redirect to /search-results
-    window.location.href = `/search-results`;
+    //Ticket #66
+    // Fetch search results from backend using searchAllProducts route
+    fetch('http://localhost:3001/products/searchAllProducts?searchTerm={' + searchQuery + '}&page={1}&pageSize={3}')
+      .then((res) => {
+        if(!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        // Generate search results
+        console.log(data); //just logging for now, will eventually go to search results page with data as products list
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   };
 
   const handleChange = (event) => {
@@ -40,7 +54,7 @@ function Header() {
           <li><a href="/grocery-list">Lists</a></li>
           <li>
             <form className="search-bar" onSubmit={handleSearch}>
-              <input className="search" type="search" placeholder="Search" value={searchQuery} onChanges={handleChange}/>
+              <input className="search" type="search" placeholder="Search" value={searchQuery} onChange={handleChange}/>
               <button type='submit'>&#x1F50E;</button>
             </form>
           </li>
