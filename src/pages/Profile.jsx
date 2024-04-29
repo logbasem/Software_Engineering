@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import "../css-html/index.css";
 
@@ -8,6 +8,33 @@ const Profile = () => {
     "https://oaidalleapiprodscus.blob.core.windows.net/private/org-shBjHQlqEqk6pmZXOCe1PL7Y/user-4GfLNmOgTe4zwPqvEACjJkbH/img-IVK6dnfFku0CCMdP6FPP1FBs.png?st=2024-04-07T20%3A24%3A26Z&amp;se=2024-04-07T22%3A24%3A26Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-04-07T00%3A29%3A14Z&amp;ske=2024-04-08T00%3A29%3A14Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=vdZfyngLzy5L3UM%2BHd/SIPmhd8FNJiMs97bz3FbsPrM%3D";
   const placeholderImage = "https://via.placeholder.com/100";
   const [lists, setLists] = useState([]);
+  
+  const defaultUser = {first_name: "Joe", last_name: "Biden", username: "", userpassword: "", email: ""};
+  const [userData, setUserData] = useState(defaultUser); //hold users information 
+ 
+
+  //get logged in information from backend
+  useEffect(() => {
+    console.log('Use effect called');
+    const fetchData = async () => {
+      console.log('Fetch data called')
+      try {
+        const response = await fetch('http://localhost:3001/users', {credentials: 'include'});
+        if (response.ok) {
+          const json = await response.json();
+          setUserData(json);
+        }
+        else {
+          console.log(response.status);
+          console.log('Something went wrong')
+        }
+      } catch(error) {
+        console.log(error);
+      }
+    };
+  
+    fetchData();
+  }, []);
 
   const handleAddList = () => {
     const listName = prompt("Enter the name of the list:");
@@ -64,7 +91,7 @@ const Profile = () => {
                 height="100"
                 width="100"
               />
-              <h3 className="mt-2">Joe Biden</h3>
+              <h3 className="mt-2">{userData.first_name} {userData.last_name}</h3>
               <p>Location: Biden House</p>
               <div className="list-group">
                 {[

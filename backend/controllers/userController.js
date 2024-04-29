@@ -68,20 +68,25 @@ const userController = {
             }
             //user not found
             if(!user) {
+                console.log('User not found');
                 return res.status(401).send(info.message);
             }
-            //If sucess, log in the user
+
             req.logIn(user, (err) => {
                 if(err) {
+                    console.err(err);
                     return next(err);
                 }
-                return res.json({message: 'Login sucessful', user});
+                res.status(200).send('Sucessful log in');
             });
+
         })(req, res, next);
     },
 
+
+
     // @desc Check if user is logged in
-    // @route GET /users/
+    // @route GET /users
     // @access Private
     getLoggedInUser: async (req, res) => {
         if(req.isAuthenticated()) {
@@ -91,6 +96,12 @@ const userController = {
         else {
             res.status(401).json({message: 'No user logged in'});
         }
+    },
+
+    //logout a user
+    logout: async(req, res) => {
+        req.logout();
+        res.send('Sucesssfully logged out');
     },
 
     // @desc Register new user

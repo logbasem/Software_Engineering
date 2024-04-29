@@ -29,6 +29,7 @@ export function Register() {
         //send a response to api
         const response = await fetch('http://localhost:3001/users/register', {
           method: 'POST',
+          credentials: 'true',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -130,6 +131,7 @@ export function Login() {
         //send a response to api
         const response = await fetch('http://localhost:3001/users/login', {
           method: 'POST',
+          credentials: 'include',
           headers: {
             'Content-Type': 'application/json'
           },
