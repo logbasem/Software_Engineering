@@ -3,14 +3,15 @@
 .header,
 .footer {
   background-color: var(--medium-color);
-
+  box-shadow: var(--dark-color) 4px 4px 8px;
 }
 
 .header {
-  position: sticky;
+  position: relative;
   display: inline-flex;
   width: 100%;
   color: var(--dark-color);
+  z-index: 1;
 }
 
 .header .logo {
@@ -101,7 +102,7 @@
   }
 }
 
-@media (max-width: 824px) {
+@media (max-width: 1030px) {
   .nav-list.hide {
     display: none;
     
@@ -126,7 +127,8 @@
     position: absolute;
     top: 100%;
     right: 0;
-    width: 70%;
+    width: 100%;
+    max-width: 400px;
     background-color:var(--first-color);
     padding: 10px 0;
     text-align: center;
@@ -147,13 +149,13 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
-  max-height: 40px;
+  max-height: 70px;
   align-items: center;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .footer .logo {
   max-height: 35px;
   height: fit-content;
-  
 }

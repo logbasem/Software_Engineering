@@ -40,7 +40,7 @@ function Header() {
           <li><a href="/grocery-list">Lists</a></li>
           <li>
             <form className="search-bar" onSubmit={handleSearch}>
-              <input className="search" type="search" placeholder="Search" value={searchQuery} onChanges={handleChange}/>
+              <input className="search" type="search" placeholder="Search" value={searchQuery} onChange={handleChange}/>
               <button type='submit'>&#x1F50E;</button>
             </form>
           </li>
