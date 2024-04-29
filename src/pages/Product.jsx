@@ -1,16 +1,16 @@
 import React from 'react';
 import '../css-html/product-page.css';
 import Dora from '../assets/map-dora.jpg';
-import Evil from '../assets/resident-evil-food.jpg'
+import Evil from '../assets/resident-evil-food.jpg';
+import Ketchup from '../assets/pexels-alena-shekhovtcova-6941017.jpg';
 
 function Product() {
   return (
   
-    <div>
-        {/*Main content of the page. Depends on the page you are designing*/}
+    /*Main content of the page*/
         <div className="content">
             <div className="left-side">
-                <div className="product">
+                <div className="product-holder">
                         <p>
                             Name of Product
                         </p>
@@ -27,7 +27,7 @@ function Product() {
             </div>
                 
             <div className="right-side">
-                <div className="product-info">
+                <div className="product-infor">
                     <p>
                         Product Information
                     </p>
@@ -57,7 +57,6 @@ function Product() {
                 </div>
             </div>
         </div>
-    </div>
   )
 }
 
