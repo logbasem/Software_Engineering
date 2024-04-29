@@ -1,11 +1,10 @@
 // Ticket 54/ Issue 54
 // redundant code
+var User = require('../models/userModel.js');
 
-
-module.exports = function(passport, user) {
+module.exports = function(passport) {
     const LocalStrategy = require('passport-local').Strategy;
     const bcrypt = require('bcrypt');
-    var User = user;
 
     //serialize and deserialize
     //for maintaining login session
@@ -16,14 +15,16 @@ module.exports = function(passport, user) {
 
     passport.deserializeUser((id, done) => {
         //retrieve user form the data base using id
-        user = User.findAll({
-            where: {
-                id: id,
-            },
-        }).then((user) => {
+        User.findOne({ where: { id: id } })
+        .then(user => {
+            // User found, pass user object to done callback
             done(null, user);
+        })
+        .catch(err => {
+            // Error occurred while retrieving user
+            done(err, null);
         });
-    });
+});
 
     //check password using bcrypt
     async function isValidPassword(enteredPass, hashPass) {
@@ -43,6 +44,7 @@ module.exports = function(passport, user) {
                 where:
                    { 
                     email: email,
+                    userpassword: password,
                 },
             }).then(function (user) {
                 //check if user exists

@@ -9,7 +9,8 @@ const mysql = require('mysql');
 const dotenv = require('dotenv');
 const passport = require('passport');
 const bodyParser = require('body-parser');
-const session = require('express-session');
+// const session = require('express-session');
+const cookieSession = require('cookie-session');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 const cors = require('cors');
@@ -23,18 +24,17 @@ require('dotenv').config();
 app.use(bodyParser.json()); //so that app can parse json requests
 
 //set up sessions
-app.use(session({
-    secret: 'secretstringforsomething',
-    resave: false,
-    saveUninitialized: false,
-    cookies: {
-        maxAge: 12 * 60 * 60 * 1000, //12 hours
-    }
+app.use(cookieSession({
+    name: 'session',
+    keys: ["randomkey"],
+    resave: true,
+    maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }))
 
 //set up cors
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: 'http://localhost:3000',
+    credentials: true,
 }));
 
 //configure Passport for authentication
