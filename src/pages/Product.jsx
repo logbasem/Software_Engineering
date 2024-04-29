@@ -28,7 +28,7 @@ function Product() {
                 
             <div className="right-side">
                 <div className="product-infor">
-                    <p>
+                    <p className>
                         Product Information
                     </p>
                     <div className="product-details">
@@ -39,22 +39,39 @@ function Product() {
                         Sed dapibus, neque eu pulvinar lobortis, nisi eros tristique quam, ut posuere ligula libero vel risus. Phasellus laoreet finibus turpis, a pellentesque nulla fermentum id. Nam rhoncus semper massa vel eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor porttitor tortor, vel molestie nisi pretium quis. Aliquam erat volutpat. Praesent et est nulla. Proin ultricies erat eget quam aliquam, a porta libero finibus. Aliquam at molestie lorem, et hendrerit leo. Sed congue, felis eget pretium auctor, ligula odio blandit nunc, ac sollicitudin dui libero vitae sem. Sed non quam eu tellus imperdiet aliquet eget vitae leo. Aenean ac commodo nisi, gravida commodo ante. Cras finibus ipsum ac finibus aliquet. Sed pharetra ornare ultricies. Phasellus luctus quam eget est tincidunt rutrum.
                     </div>
                 </div>
-                <div className="recommended">
+                <section className="recommended">
                         <p>
                             You Might Also Like
                         </p>
-                        <div className="scrolling-wrapper">
-                            <div className="card"><h2>Image</h2></div>
-                            <div className="card"><h2>Image</h2></div>
-                            <div className="card"><h2>Image</h2></div>
-                            <div className="card"><h2>Image</h2></div>
-                            <div className="card"><h2>Image</h2></div>
-                            <div className="card"><h2>Image</h2></div>
-                            <div className="card"><h2>Image</h2></div>
-                            <div className="card"><h2>Image</h2></div>
-                            <div className="card"><h2>Image</h2></div>
+                        <div className='recommend-carousel'>
+                            <div className='rec-items'>
+                                <div className='rec-item'>
+                                    <img className='recimage' src={Ketchup} alt='ketchup' />
+                                    <p>Product 1</p>
+                                </div>
+                                <div className='rec-item'>
+                                    <img className='recimage' src={Ketchup} alt='ketchup' />
+                                    <p>Product 2</p>
+                                </div>
+                                <div className='rec-item'>
+                                    <img className='recimage' src={Ketchup} alt='ketchup' />
+                                    <p>Product 3</p>
+                                </div>
+                                <div className='rec-item'>
+                                    <img className='recimage' src={Ketchup} alt='ketchup' />
+                                    <p>Product 4</p>
+                                </div>
+                                <div className='rec-item'>
+                                    <img className='recimage' src={Ketchup} alt='ketchup' />
+                                    <p>Product 5</p>
+                                </div>
+                                <div className='rec-item'>
+                                    <img className='recimage' src={Ketchup} alt='ketchup' />
+                                    <p>Product 6</p>
+                                </div>
+                            </div>
                         </div>
-                </div>
+                </section>
             </div>
         </div>
   )
