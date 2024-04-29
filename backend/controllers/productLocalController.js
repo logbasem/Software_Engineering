@@ -16,7 +16,9 @@ const plController = {
         // -- searchTerm represents the users query into the searchBar
         // -- pageSize represents the number of records to retrieve per page
         // -- page represents the current page of the search results in frontend
-        const { searchTerm, page, pageSize} = req.query 
+        const searchTerm = req.query.searchTerm;
+        const page = parseInt(req.query.page);
+        const pageSize = parseInt(req.query.pageSize);
     
         try {
             const options = {

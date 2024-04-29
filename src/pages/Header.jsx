@@ -21,10 +21,14 @@ function Header() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (event) => {
+    const page = 1;
+    const pageSize = 3;
+
     event.preventDefault();
     //Ticket #66
     // Fetch search results from backend using searchAllProducts route
-    fetch('http://localhost:3001/products/searchAllProducts?searchTerm={' + searchQuery + '}&page={1}&pageSize={3}')
+    const url = `http://localhost:3001/products/searchAllProducts?searchTerm=${searchQuery}&page=${page}&pageSize=${pageSize}`;
+    fetch(url)
       .then((res) => {
         if(!res.ok) {
           throw new Error(res.status);
