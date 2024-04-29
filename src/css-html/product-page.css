@@ -109,6 +109,8 @@ body{
     overflow: auto;
 }
 */
+
+/*Overall Page content formatting*/
 .content{
     background-color:#FAF9F6;
     flex: 1;
@@ -117,6 +119,7 @@ body{
     padding:1% 1% 5% 1%
 }
 
+/*Left half styles (map and product image)*/
 .left-side{
     background-color:#FAF9F6;
     display: flex;
@@ -125,7 +128,6 @@ body{
     justify-content: center;
     width:50%;
 }
-
 .product-holder{
     height:50%;
     min-width: 100%;
@@ -176,6 +178,7 @@ body{
     width: 100%;
 }
 
+/*Right half styles (product information and recommended products)*/
 .right-side{
     background-color:#FAF9F6;
     display: flex;
