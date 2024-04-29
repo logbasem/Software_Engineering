@@ -162,20 +162,18 @@
 
 p.lr-error {
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   width: 100%;
   box-sizing: border-box; /* Ensures padding doesn't affect overall width */
   max-width: 400px; /* or any other maximum width */
   margin: auto; /* Centers the element within its container */
   display: block; /* Ensures margin: auto takes effect */
   color: var(--second-color);
-  text-shadow: 2px 1px 2px var(--dark-color);
 }
 
 .success-message {
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   width: 100%;
-  color: #afcf84;
-  text-shadow: 2px 1px 2px rgb(56, 56, 56);
+  color: var(--first-color);
 }

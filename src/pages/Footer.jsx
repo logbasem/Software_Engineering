@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className="footer">
       <img className="logo" src= { KYPerLogo } alt='KYPer Logo'/>
-      <p className="copyright">Group N &copy; 2024, All Rights Reserved</p>
+      <p className="copyright pt-3">Group N &copy; 2024, All Rights Reserved</p>
     </footer>
   );
 }
