@@ -6,10 +6,11 @@
 }
 
 .header {
-  position: sticky;
+  position: relative;
   display: inline-flex;
   width: 100%;
   color: var(--dark-color);
+  z-index: 1;
 }
 
 .header .logo {
@@ -125,7 +126,8 @@
     position: absolute;
     top: 100%;
     right: 0;
-    width: 70%;
+    width: 100%;
+    max-width: 400px;
     background-color:var(--first-color);
     padding: 10px 0;
     text-align: center;
