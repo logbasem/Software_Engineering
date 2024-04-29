@@ -1,4 +1,5 @@
 //Ticket #13
+//Ticket #65
 import React, { useEffect, useState } from "react";
 import '../css-html/SearchResults.css';
 import "../css-html/index.css";
@@ -29,14 +30,16 @@ export const SearchResults = () => {
             <h2>Results:</h2>
             <div className="search-results">
                 {searchResults.map((searchResult) => (
-                    <a href='/product'><div key={searchResult.id} className="search-result">
-                        <div>{searchResult.name}</div>
+                    <div key={searchResult.id} className="search-result">
+                    <a href='/product'>
+                        <div className="product-name">{searchResult.name}</div>
                         <div className="product-info">{searchResult.info}</div>
+                    </a>
                         <button onClick={() => handleAddToList(searchResult.id)} className="add-to-list-button">
                             <span>+ </span>
                             <span>Add to List</span>
                         </button>
-                    </div></a>
+                    </div>
                 ))}
             </div>
         </div>
