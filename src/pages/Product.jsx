@@ -11,16 +11,16 @@ function Product() {
         <div className="content">
             <div className="left-side">
                 <div className="product-holder">
-                        <p>
+                        <h4>
                             Name of Product
-                        </p>
+                        </h4>
                         <div className="productimageholder"><img className="productimage" src= { Evil } />
                         </div>
                 </div>
                 <div className="map">
-                        <p>
+                        <h4>
                             Locations Near You
-                        </p>
+                        </h4>
                         <div className="mapimageholder"><img className="mapimage" src= { Dora }/>
                         </div>
                 </div>
@@ -28,9 +28,9 @@ function Product() {
                 
             <div className="right-side">
                 <div className="product-infor">
-                    <p className>
+                    <h4>
                         Product Information
-                    </p>
+                    </h4>
                     <div className="product-details">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fringilla diam et sem pellentesque pellentesque. Nam odio nisi, dictum et iaculis in, ornare nec urna. Maecenas vitae purus neque. Praesent dolor nisi, porttitor at gravida quis, cursus quis libero. Phasellus vulputate felis non elit finibus imperdiet. Pellentesque sollicitudin, tellus ut pellentesque iaculis, nibh metus porta risus, sed faucibus nulla leo ut massa. Nam semper pellentesque sem. Quisque placerat diam nec eleifend consectetur. Nullam ante dolor, vulputate eu sagittis in, faucibus in augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer tincidunt est ac libero convallis tempor. Donec posuere tempor semper. Fusce a pulvinar ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
                         Vestibulum id molestie ante. In iaculis, neque vel tempor dictum, metus sapien porta dui, sed pulvinar felis magna non ante. Praesent condimentum arcu at mauris convallis, sit amet aliquet lacus scelerisque. Proin hendrerit quam metus, sit amet bibendum nunc consectetur nec. Nunc dictum, sapien vitae varius fringilla, mi urna ullamcorper ipsum, sed faucibus urna sem quis odio. Aliquam feugiat at enim eu elementum. Integer sagittis sit amet neque at vehicula. Donec ut eros eros. Sed id pellentesque arcu, ut convallis metus. Sed pretium, risus a venenatis feugiat, est mi elementum sem, in sollicitudin metus velit a lectus. Vivamus ut malesuada felis. Curabitur quis nisi semper, iaculis lacus nec, ullamcorper massa. Sed auctor sit amet nisi ornare tincidunt.
@@ -40,9 +40,9 @@ function Product() {
                     </div>
                 </div>
                 <section className="recommended">
-                        <p>
+                        <h4>
                             You Might Also Like
-                        </p>
+                        </h4>
                         <div className='recommend-carousel'>
                             <div className='rec-items'>
                                 <div className='rec-item'>
