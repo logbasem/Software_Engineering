@@ -3,6 +3,7 @@
 .header,
 .footer {
   background-color: var(--medium-color);
+  box-shadow: var(--dark-color) 4px 4px 8px;
 }
 
 .header {
@@ -151,6 +152,7 @@
   max-height: 70px;
   align-items: center;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .footer .logo {

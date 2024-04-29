@@ -184,6 +184,7 @@ html {
   background-color: var(--light-color2);
   padding: 10px;
   box-shadow: var(--dark-color) 4px 4px 8px;
+  margin-top: 20px;
 }
 
 .about-kyper h1 {
@@ -195,17 +196,19 @@ html {
 .faq-item {
   max-width: 1000px;
   margin: auto;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   background-color: var(--third-color);
   padding: 30px;
   border-radius: 10px;
   color: var(--text-color);
   box-shadow: var(--dark-color) 4px 4px 8px;
+  font-size: large;
 }
 
 .question {
   cursor: pointer;
   font-weight: bold;
+  font-size: larger;
 }
 
 .answer {
@@ -218,13 +221,12 @@ html {
   padding: 2%;
   margin: 20px 0px;
   box-shadow: var(--dark-color) 4px 4px 8px;
-  
+  min-height: 600px;
 }
 
 .team-about h1 {
   text-align: center;
   color: var(--dark-color);
-  
 }
 
 .team-spaces {
@@ -236,7 +238,7 @@ html {
 .team-spaces div {
   background-color: var(--first-color-opaque);
   margin: 10px;
-  max-width: 150px;
+  max-width: 200px;
   border-style: solid;
   border-color: var(--first-color);
   border-radius: 10px;
@@ -255,4 +257,5 @@ html {
   text-align: center;
   font-size: larger;
   color: var(--dark-color);
+  font-size:x-large;
 }
