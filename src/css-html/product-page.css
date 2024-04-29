@@ -139,6 +139,9 @@ body{
 .productimageholder{
     border:2px solid black;
     height:100%;
+    box-sizing: border-box;
+    padding: 5%;
+
 }
 
 .productimage{
@@ -162,14 +165,14 @@ body{
     justify-content: center;
     display: flex;
     box-sizing: border-box;
-    padding: 50px;
+    padding: 5%;
     align-items: center;
     overflow: hidden;
     height: 100%;
 }
 
 .mapimage{
-    height: 80%;
+    height: 100%;
     width: 100%;
 }
 
