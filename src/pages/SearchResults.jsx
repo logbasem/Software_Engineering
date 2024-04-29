@@ -24,6 +24,7 @@ export const SearchResults = () => {
         setSearchResults(testSearchResults);
     }, []);
 
+    //TODO: Get search results from backend
     /*
     //get search results from searchAllProducts request (see Header.jsx)
     useEffect(() => {
