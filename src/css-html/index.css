@@ -68,6 +68,7 @@ html {
   justify-content: space-evenly; /* Equally distribute space between children */
   padding: 10px;
   flex-wrap: wrap;
+  height: 480px;
 }
 
 .features-1,
@@ -77,12 +78,13 @@ html {
   text-align: center; /* Center align text within each section */
   background-color: var(--first-color-opaque);
   border-radius: 10px;
-  width: 400px;
-  height:350px;
+  width: 550px;
+  height:440px;
   border-style: solid;
   border-color: var(--first-color);
   padding: 15px;
   box-shadow: var(--dark-color) 4px 4px 8px;
+  align-content: center;
 }
 
 .features-1 h4, 
@@ -95,7 +97,7 @@ html {
 
 .features img {
   width: 95%; /* Make images fill their containers */
-  max-width: 400px; /* Set a maximum width for the images */
+  max-width: 500px; /* Set a maximum width for the images */
   height: auto; /* Maintain aspect ratio */
   border-radius: 10px;
   margin-top: 10px;
