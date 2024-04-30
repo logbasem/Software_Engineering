@@ -9,12 +9,13 @@ import BannerImage from "../assets/banner.jpg"; // Import the banner image
 
 export function Homepage() {
   return (
-    <div classname = "all">
+    <div className = "all">
       <main>
         <div
           className="carousel-container"
           style={{
             marginBottom: "20px",
+            marginTop: "20px",
             backgroundImage: `url(${BannerImage})`,
             boxShadow: "var(--dark-color) 0 4px 6px",
           }}

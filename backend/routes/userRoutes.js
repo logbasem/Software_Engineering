@@ -17,8 +17,7 @@ function isAuthenticated(req, res, next) {
     if(req.isAuthenticated()) {
         return next();
     }
-    //else redirect user to login page
-    res.redirect('/login');
+    console.log('Not logged in bro');
 }
 //login router
 //POST  (create)
@@ -28,6 +27,7 @@ router.post('/login', userController.login);
 //GET (read)
 router.get("/", isAuthenticated, userController.getLoggedInUser);
 
+router.get("/logout", userController.logout);
 
 router.get("/allUsers", userController.getAllUsers);
 

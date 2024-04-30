@@ -29,6 +29,7 @@ export function Register() {
         //send a response to api
         const response = await fetch('http://localhost:3001/users/register', {
           method: 'POST',
+          credentials: 'true',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -48,7 +49,7 @@ export function Register() {
     } 
   
     return (
-      <><h1 class="registerh1">Register</h1>
+      <div style={{minHeight:'74vh', alignContent:'center'}}><h1 class="registerh1">Register</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
         <input class="register" type="text" placeholder="First name" {...register("first_name", { required: true, maxLength: 80 })} aria-invalid={errors.firstname ? "true" : "false"} />
           {errors.firstname?.type === "required" && (
@@ -100,7 +101,7 @@ export function Register() {
          <p className='success-message'>Registration Sucessful</p>
         }
       </div>
-      </>
+      </div>
     );
   }
   
@@ -130,6 +131,7 @@ export function Login() {
         //send a response to api
         const response = await fetch('http://localhost:3001/users/login', {
           method: 'POST',
+          credentials: 'include',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -149,7 +151,7 @@ export function Login() {
       } 
 
     return (
-      <><h1 class="registerh1">Login</h1><form onSubmit={handleSubmit(onSubmit)}>
+      <div style={{minHeight:'74vh', alignContent:'center'}}><h1 class="registerh1">Login</h1><form onSubmit={handleSubmit(onSubmit)}>
         <input class="register" type="text" placeholder="Email" {...register("email", { required: true })} aria-invalid={errors.email ? "true" : "false"} /> 
           {errors.email?.type === "required" && (
             <p role="alert" class="lr-error">🚨 Email is required</p>
@@ -167,7 +169,7 @@ export function Login() {
         {loginMessage &&
         <p className='success-message'>Login Successful</p>}
       </div>
-      </>
+      </div>
     );
   }
   

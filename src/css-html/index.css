@@ -15,6 +15,7 @@
   /*Neutral and text colors*/
   --light-color: #fff0e3;
   --light-color2: #d4baa5;
+  --light-color3: #858383;
 
   --medium-color: #695d53;
 
@@ -68,6 +69,7 @@ html {
   justify-content: space-evenly; /* Equally distribute space between children */
   padding: 10px;
   flex-wrap: wrap;
+  height: 480px;
 }
 
 .features-1,
@@ -77,12 +79,13 @@ html {
   text-align: center; /* Center align text within each section */
   background-color: var(--first-color-opaque);
   border-radius: 10px;
-  width: 400px;
-  height:350px;
+  width: 550px;
+  height:440px;
   border-style: solid;
   border-color: var(--first-color);
   padding: 15px;
   box-shadow: var(--dark-color) 4px 4px 8px;
+  align-content: center;
 }
 
 .features-1 h4, 
@@ -95,7 +98,7 @@ html {
 
 .features img {
   width: 95%; /* Make images fill their containers */
-  max-width: 400px; /* Set a maximum width for the images */
+  max-width: 500px; /* Set a maximum width for the images */
   height: auto; /* Maintain aspect ratio */
   border-radius: 10px;
   margin-top: 10px;
@@ -136,7 +139,7 @@ html {
   border-radius: 10px;
   padding: 20px;
   max-width: 450px;
-  min-width: 230px;
+  min-width: 335px;
   font-size: large;
   border-style: solid;
   border-width:8px;
@@ -147,6 +150,11 @@ html {
 .shopper-plan h4 {
   text-align: center; /* Center align h4 within each section */
   font-size: larger;
+}
+
+.producer-plan p,
+.shopper-plan p {
+  margin: 20px;
 }
 
 .producer-plan .account-features,
@@ -177,6 +185,7 @@ html {
   background-color: var(--light-color2);
   padding: 10px;
   box-shadow: var(--dark-color) 4px 4px 8px;
+  margin-top: 20px;
 }
 
 .about-kyper h1 {
@@ -188,17 +197,19 @@ html {
 .faq-item {
   max-width: 1000px;
   margin: auto;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   background-color: var(--third-color);
   padding: 30px;
   border-radius: 10px;
   color: var(--text-color);
   box-shadow: var(--dark-color) 4px 4px 8px;
+  font-size: large;
 }
 
 .question {
   cursor: pointer;
   font-weight: bold;
+  font-size: larger;
 }
 
 .answer {
@@ -211,13 +222,12 @@ html {
   padding: 2%;
   margin: 20px 0px;
   box-shadow: var(--dark-color) 4px 4px 8px;
-  
+  min-height: 600px;
 }
 
 .team-about h1 {
   text-align: center;
   color: var(--dark-color);
-  
 }
 
 .team-spaces {
@@ -229,7 +239,7 @@ html {
 .team-spaces div {
   background-color: var(--first-color-opaque);
   margin: 10px;
-  max-width: 150px;
+  max-width: 200px;
   border-style: solid;
   border-color: var(--first-color);
   border-radius: 10px;
@@ -248,4 +258,5 @@ html {
   text-align: center;
   font-size: larger;
   color: var(--dark-color);
+  font-size:x-large;
 }

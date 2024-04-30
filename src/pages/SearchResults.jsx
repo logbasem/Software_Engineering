@@ -1,5 +1,7 @@
 //Ticket #13
 //Ticket #66
+//Ticket #65 - Add to List Button
+
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import '../css-html/SearchResults.css';
@@ -12,6 +14,7 @@ import "../css-html/index.css";
 export const SearchResults = () => {
     //const location = useLocation();
     const [searchResults, setSearchResults] = useState([]);
+    const [buttonStates, setButtonStates] = useState([]);
 
     useEffect(() => {
         // Test search results
@@ -36,10 +39,24 @@ export const SearchResults = () => {
         }
     }, [location.search]);*/
 
-    //const [error, setError] = useState(false);
+    //initialize button states for each search result
+    useEffect(() => {
+        const initialState = {};
+        searchResults.forEach((searchResult) => {
+            initialState[searchResult.id] = false;
+        });
+        setButtonStates(initialState);
+    }, []);
+
+    //handle adding item to list
     const handleAddToList = (resultId) => {
-        // Handle adding the item to the list
+        //TODO: Implement adding item to list (need a backend representation of the list first)
         console.log(`Adding item with ID ${resultId} to list`);
+        
+        //change button text to 'Added' and disable button after clicked
+        const newButtonStates = { ...buttonStates };
+        newButtonStates[resultId] = true;
+        setButtonStates(newButtonStates);
     };
 
     return (
@@ -47,14 +64,18 @@ export const SearchResults = () => {
             <h2>Results:</h2>
             <div className="search-results">
                 {searchResults.map((searchResult) => (
-                    <a href='/product'><div key={searchResult.id} className="search-result">
-                        <div>{searchResult.name}</div>
+                    <div key={searchResult.id} className="search-result">
+                    <a href='/product'>
+                        <div className="product-name">{searchResult.name}</div>
                         <div className="product-info">{searchResult.info}</div>
-                        <button onClick={() => handleAddToList(searchResult.id)} className="add-to-list-button">
+                    </a>
+                        <button onClick={() => handleAddToList(searchResult.id)} 
+                        className={`add-to-list-button ${buttonStates[searchResult.id] ? 'gray-button' : ''}`}
+                        disabled={buttonStates[searchResult.id]}>
                             <span>+ </span>
-                            <span>Add to List</span>
+                            <span>{buttonStates[searchResult.id] ? 'Added' : 'Add to List'}</span>
                         </button>
-                    </div></a>
+                    </div>
                 ))}
             </div>
         </div>
