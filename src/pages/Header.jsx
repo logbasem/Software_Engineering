@@ -22,8 +22,35 @@ function Header() {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    // Redirect to /search-results
-    window.location.href = `/search-results`;
+    //Ticket #66
+    // Fetch search results from backend using searchAllProducts route (unfinished)
+    fetch('http://localhost:3001/products/searchAllProducts?searchTerm={' + searchQuery + '}&page={1}&pageSize={3}')
+      .then((res) => {
+        if(!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        // Generate search results
+        console.log(data); //just logging for now, will eventually go to search results page with data as products list
+        //map products to an array of objects
+        const searchResults = data.products.map((product) => {
+          return {
+            id: product.productID,
+            name: product.type,
+            info: product.company,
+          }
+        });
+        //redirect to search results page
+        //TODO: When backend connection works, this should be a good baseline for passing search results to the search results page
+        //window.location.href = '/search-results?results=' + encodeURIComponent(JSON.stringify(searchResults));
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    //...for now, we go straight to the search results page no matter what
+    window.location.href = '/search-results';
   };
 
   const handleChange = (event) => {

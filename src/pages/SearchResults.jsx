@@ -1,15 +1,21 @@
-//Ticket #13 - Search Results Page
+//Ticket #13
+//Ticket #66
 //Ticket #65 - Add to List Button
+
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import '../css-html/SearchResults.css';
 import "../css-html/index.css";
 
 //component reference from Chinedu Imoh at: https://www.telerik.com/blogs/how-to-implement-standard-search-using-react
 //this is specifically a component configured to work with express, so should be relatively simple
 //to link with backend later
+
 export const SearchResults = () => {
+    //const location = useLocation();
     const [searchResults, setSearchResults] = useState([]);
     const [buttonStates, setButtonStates] = useState([]);
+
     useEffect(() => {
         // Test search results
         const testSearchResults = [
@@ -20,6 +26,18 @@ export const SearchResults = () => {
 
         setSearchResults(testSearchResults);
     }, []);
+
+    //TODO: Get search results from backend
+    /*
+    //get search results from searchAllProducts request (see Header.jsx)
+    useEffect(() => {
+        //extract search results from query parameter
+        const searchResultsQuery = new URLSearchParams(location.search).get('results');
+        if (searchResultsQuery) {
+            //setSearchResults(JSON.parse(decodeURIComponent(searchResultsQuery)));
+            console.log(searchResultsQuery);
+        }
+    }, [location.search]);*/
 
     //initialize button states for each search result
     useEffect(() => {
