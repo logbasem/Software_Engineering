@@ -1,22 +1,21 @@
-//Ticket #13
-//Ticket #66
+//Ticket #13 - Search Results Page
 //Ticket #65 - Add to List Button
-
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import {useLocation} from 'react-router-dom';
 import '../css-html/SearchResults.css';
 import "../css-html/index.css";
 
 //component reference from Chinedu Imoh at: https://www.telerik.com/blogs/how-to-implement-standard-search-using-react
 //this is specifically a component configured to work with express, so should be relatively simple
 //to link with backend later
-
 export const SearchResults = () => {
-    //const location = useLocation();
+    const navigate = useNavigate();
+    const location = useLocation(); //gets state data
+    
     const [searchResults, setSearchResults] = useState([]);
     const [buttonStates, setButtonStates] = useState([]);
-
-    useEffect(() => {
+    /*useEffect(() => {
         // Test search results
         const testSearchResults = [
             { id: 1, name: 'Product 1', info: 'Product Info' },
@@ -25,19 +24,14 @@ export const SearchResults = () => {
         ];
 
         setSearchResults(testSearchResults);
-    }, []);
+    }, []);*/
 
-    //TODO: Get search results from backend
-    /*
-    //get search results from searchAllProducts request (see Header.jsx)
+    //get data from navigate
     useEffect(() => {
-        //extract search results from query parameter
-        const searchResultsQuery = new URLSearchParams(location.search).get('results');
-        if (searchResultsQuery) {
-            //setSearchResults(JSON.parse(decodeURIComponent(searchResultsQuery)));
-            console.log(searchResultsQuery);
-        }
-    }, [location.search]);*/
+        const { products } = location.state;
+        console.log(products);
+        setSearchResults(products);
+    }, [location.state]);
 
     //initialize button states for each search result
     useEffect(() => {
@@ -47,6 +41,13 @@ export const SearchResults = () => {
         });
         setButtonStates(initialState);
     }, []);
+
+    const handleProduct = (product) => {
+        navigate(`/product`, {
+            state: {productData: product}
+          });
+        console.log(product);
+    }
 
     //handle adding item to list
     const handleAddToList = (resultId) => {
@@ -64,11 +65,12 @@ export const SearchResults = () => {
             <h2>Results:</h2>
             <div className="search-results">
                 {searchResults.map((searchResult) => (
-                    <div key={searchResult.id} className="search-result">
-                    <a href='/product'>
-                        <div className="product-name">{searchResult.name}</div>
-                        <div className="product-info">{searchResult.info}</div>
-                    </a>
+                    <div key={searchResult.productId} className="search-result">
+                    <button onClick={() => handleProduct(searchResult)}
+                        className={'product-button'}>
+                        <div className="product-name">{searchResult.type}</div>
+                        <div className="product-info">{searchResult.company}</div>
+                    </button>
                         <button onClick={() => handleAddToList(searchResult.id)} 
                         className={`add-to-list-button ${buttonStates[searchResult.id] ? 'gray-button' : ''}`}
                         disabled={buttonStates[searchResult.id]}>

@@ -1,10 +1,20 @@
-import React from 'react';
+import React, {useEffect, useState } from 'react';
 import '../css-html/product-page.css';
+import { useLocation } from 'react-router-dom';
 import Dora from '../assets/map-dora.jpg';
 import Evil from '../assets/resident-evil-food.jpg';
 import Ketchup from '../assets/pexels-alena-shekhovtcova-6941017.jpg';
 
 function Product() {
+    const location = useLocation();
+    const [product, setProductData] = useState([]);
+    
+    useEffect(() => {
+        const { productData } = location.state;
+        console.log(productData);
+        setProductData(productData);
+    }, [location.state]);
+
   return (
   
     /*Main content of the page*/
@@ -12,7 +22,7 @@ function Product() {
             <div className="left-side">
                 <div className="product-holder">
                         <h4>
-                            Name of Product
+                            {product.type}
                         </h4>
                         <div className="productimageholder"><img className="productimage" src= { Evil } />
                         </div>
@@ -33,6 +43,7 @@ function Product() {
                         Product Information
                     </h4>
                     <div className="product-details">
+                        {product.company}
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fringilla diam et sem pellentesque pellentesque. Nam odio nisi, dictum et iaculis in, ornare nec urna. Maecenas vitae purus neque. Praesent dolor nisi, porttitor at gravida quis, cursus quis libero. Phasellus vulputate felis non elit finibus imperdiet. Pellentesque sollicitudin, tellus ut pellentesque iaculis, nibh metus porta risus, sed faucibus nulla leo ut massa. Nam semper pellentesque sem. Quisque placerat diam nec eleifend consectetur. Nullam ante dolor, vulputate eu sagittis in, faucibus in augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer tincidunt est ac libero convallis tempor. Donec posuere tempor semper. Fusce a pulvinar ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
                         Vestibulum id molestie ante. In iaculis, neque vel tempor dictum, metus sapien porta dui, sed pulvinar felis magna non ante. Praesent condimentum arcu at mauris convallis, sit amet aliquet lacus scelerisque. Proin hendrerit quam metus, sit amet bibendum nunc consectetur nec. Nunc dictum, sapien vitae varius fringilla, mi urna ullamcorper ipsum, sed faucibus urna sem quis odio. Aliquam feugiat at enim eu elementum. Integer sagittis sit amet neque at vehicula. Donec ut eros eros. Sed id pellentesque arcu, ut convallis metus. Sed pretium, risus a venenatis feugiat, est mi elementum sem, in sollicitudin metus velit a lectus. Vivamus ut malesuada felis. Curabitur quis nisi semper, iaculis lacus nec, ullamcorper massa. Sed auctor sit amet nisi ornare tincidunt.
                         Vestibulum elementum bibendum justo at elementum. Sed feugiat dolor eu enim facilisis hendrerit. Duis erat augue, rhoncus ac convallis vel, pretium eu velit. Mauris maximus, ipsum ut consectetur laoreet, nunc sapien sollicitudin enim, nec ornare magna eros vitae orci. Ut vitae ex quis ante bibendum mollis in ac purus. Praesent facilisis nulla elit, vitae fermentum erat commodo ac. Praesent et ullamcorper tellus, ut blandit nulla.

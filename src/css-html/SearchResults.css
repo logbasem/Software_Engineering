@@ -24,6 +24,10 @@
     color:var(--dark-color);
     background-color: var(--text-color);
     padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
   
   .add-to-list-button {
@@ -61,6 +65,17 @@
     width: 100%;
     margin: 10px 0;
     border-top: 1px solid var(--light-color);
+  }
+
+  .product-button {
+    background: none;
+    border: none;
+    background:none;
+    cursor: pointer;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
   }
 
   .product-name {
