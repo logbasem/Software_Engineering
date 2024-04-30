@@ -38,7 +38,7 @@ const ProfileSettings = () => {
     fetchData();
   }, []);
 
-  // Use user data from the backend if available, otherwise fallback to data from the page
+  // use user data from backend, else use fallback
   const userData = userDataBackend || userDataPage;
 
   // Fallback list
@@ -69,7 +69,7 @@ const ProfileSettings = () => {
     fetchLists();
   }, []);
 
-  // Use list data from the backend if available, otherwise fallback to data from the page
+  // Use list data, else use fallback
   const lists = listsBackend || listsPage;
 
   // Fct to delete list
