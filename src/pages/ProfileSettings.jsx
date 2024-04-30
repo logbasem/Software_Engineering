@@ -1,3 +1,4 @@
+// Issue #74 - Profile Settings Page
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import { FaTrash } from "react-icons/fa";
