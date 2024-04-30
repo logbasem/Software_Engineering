@@ -54,6 +54,7 @@
   .gray-button {
     background-color: var(--light-color3);
     color: var(--light-color);
+    pointer-events: none;
   }
   
   .result-divider {
