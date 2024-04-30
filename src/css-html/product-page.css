@@ -265,13 +265,18 @@ body{
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    overflow-x: auto;
-    scroll-behavior: smooth;
 }
 
-/*.recommend-carousel::-webkit-scrollbar {
+.rec-carou-holder::-webkit-scrollbar {
     display: none;
-}*/
+}
+
+.rec-carou-holder{
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: row;
+}
 
 .rec-items{
     display: flex;
@@ -280,7 +285,7 @@ body{
     align-items: center;
     min-height: 35%;
     min-width: 25%;
-    box-sizing: border-box;
+    box-sizing: content-box;
     padding-left: 15px;
 }
 
