@@ -45,37 +45,44 @@ function Product() {
                             You Might Also Like
                         </h4>
                         <div className='recommend-carousel'>
-                            <div className='rec-items'>
-                                 
+                            
+                            <div className='rec-carou-holder'>
+                                <div className='rec-items'>
                                     <img className='recimage' src={Ketchup} alt='ketchup' />
-                                
-                                <div className='rec-info'>
-                                    <p>Product 1</p>
-                                </div>    
-                            </div>
-                            <div className='rec-items'>
-                                 
+                                    <div className='rec-info'>
+                                        <p>Product 1</p>
+                                    </div>    
+                                </div>
+                                <div className='rec-items'>
                                     <img className='recimage' src={Ketchup} alt='ketchup' />
-                                
-                                <div className='rec-info'>
-                                    <p>Product 2</p>
-                                </div>    
-                            </div>
-                            <div className='rec-items'>
-                                 
+                                    <div className='rec-info'>
+                                        <p>Product 2</p>
+                                    </div>    
+                                </div>
+                                <div className='rec-items'>
                                     <img className='recimage' src={Ketchup} alt='ketchup' />
-                                
-                                <div className='rec-info'>
-                                    <p>Product 3</p>
-                                </div>    
-                            </div>
-                            <div className='rec-items'>
-                                 
+                                    <div className='rec-info'>
+                                        <p>Product 3</p>
+                                    </div>    
+                                </div>
+                                <div className='rec-items'>
                                     <img className='recimage' src={Ketchup} alt='ketchup' />
-                                
-                                <div className='rec-info'>
-                                    <p>Product 4</p>
-                                </div>    
+                                    <div className='rec-info'>
+                                        <p>Product 4</p>
+                                    </div>    
+                                </div>
+                                <div className='rec-items'>
+                                    <img className='recimage' src={Ketchup} alt='ketchup' />
+                                    <div className='rec-info'>
+                                        <p>Product 5</p>
+                                    </div>    
+                                </div>
+                                <div className='rec-items'>
+                                    <img className='recimage' src={Ketchup} alt='ketchup' />
+                                    <div className='rec-info'>
+                                        <p>Product 6</p>
+                                    </div>    
+                                </div>
                             </div>
 
                         </div>
