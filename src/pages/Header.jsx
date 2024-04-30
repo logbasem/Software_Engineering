@@ -1,10 +1,12 @@
 /*Ticket 2*/
 import "../css-html/index.css";
 import React, { useState } from 'react';
+import {useNavigate} from "react-router-dom";
 import '../css-html/asset.css';
 import KYPerLogo from '../assets/KYPer Logo.png';
 
 function Header() {
+  const navigate = useNavigate();
 
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -24,7 +26,7 @@ function Header() {
     event.preventDefault();
     //Ticket #66
     // Fetch search results from backend using searchAllProducts route (unfinished)
-    fetch('http://localhost:3001/products/searchAllProducts?searchTerm={' + searchQuery + '}&page={1}&pageSize={3}')
+    fetch(`http://localhost:3001/products/searchAllProducts?searchTerm=${searchQuery}&page=${1}&pageSize=${3}`)
       .then((res) => {
         if(!res.ok) {
           throw new Error(res.status);
@@ -33,14 +35,9 @@ function Header() {
       })
       .then((data) => {
         // Generate search results
-        console.log(data); //just logging for now, will eventually go to search results page with data as products list
-        //map products to an array of objects
-        const searchResults = data.products.map((product) => {
-          return {
-            id: product.productID,
-            name: product.type,
-            info: product.company,
-          }
+        //push to search results
+        navigate(`/search-results`, {
+          state: data
         });
         //redirect to search results page
         //TODO: When backend connection works, this should be a good baseline for passing search results to the search results page
@@ -50,7 +47,7 @@ function Header() {
         console.error('Error:', error);
       });
     //...for now, we go straight to the search results page no matter what
-    window.location.href = '/search-results';
+    // window.location.href = '/search-results';
   };
 
   const handleChange = (event) => {
