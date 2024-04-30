@@ -50,6 +50,11 @@
     font-size: 12px;
     margin-left: 5px;
   }
+
+  .gray-button {
+    background-color: var(--light-color3);
+    color: var(--light-color);
+  }
   
   .result-divider {
     width: 100%;
