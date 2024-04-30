@@ -138,7 +138,6 @@ body{
     min-width: 100%;
     max-width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 
@@ -152,15 +151,27 @@ body{
 }
 
 .productimageholder{
-    height:100%;
+    height:auto;
     box-sizing: border-box;
     padding: 1%;
 
 }
 
 .productimage{
-    height: 100%;
-    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.add-to-list-a{
+    background-color: var(--first-color);
+    border-color: var(--first-color2);
+    color: var(--dark-color);
+    font-weight: bold;
+    font-size: large;
+    border-radius: 10px;
+    padding: 10px 25%;
+    cursor: pointer;
+    border-style: solid;
 }
 
 .map{
@@ -192,8 +203,8 @@ body{
 }
 
 .mapimage{
-    height: 100%;
-    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 /*Right half styles (product information and recommended products)*/
@@ -236,7 +247,6 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-
     background-color: var(--light-color);
     border-radius: 2%;
     padding: 2%;
@@ -255,30 +265,28 @@ body{
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-
-}
-
-.rec-items{
     overflow-x: auto;
-    display: flex;
-    flex-direction: row;
     scroll-behavior: smooth;
 }
 
-.rec-item{
-    justify-content: center;
+/*.recommend-carousel::-webkit-scrollbar {
+    display: none;
+}*/
+
+.rec-items{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 50%;
-    width: 50%;
-    box-sizing: content-box;
+    min-height: 35%;
+    min-width: 25%;
+    box-sizing: border-box;
     padding-left: 15px;
 }
 
 .recimage{
-    max-height: 200px;
-    max-width: 250px;
+    max-height: 100%;
+    max-width: 100%;
 }
 /*.footer{
     background-color: #94B16F;

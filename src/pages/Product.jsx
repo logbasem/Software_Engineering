@@ -16,6 +16,7 @@ function Product() {
                         </h4>
                         <div className="productimageholder"><img className="productimage" src= { Evil } />
                         </div>
+                        <button className="add-to-list-a">Add to List</button>
                 </div>
                 <div className="map">
                         <h4>
@@ -45,31 +46,38 @@ function Product() {
                         </h4>
                         <div className='recommend-carousel'>
                             <div className='rec-items'>
-                                <div className='rec-item'>
+                                 
                                     <img className='recimage' src={Ketchup} alt='ketchup' />
+                                
+                                <div className='rec-info'>
                                     <p>Product 1</p>
-                                </div>
-                                <div className='rec-item'>
-                                    <img className='recimage' src={Ketchup} alt='ketchup' />
-                                    <p>Product 2</p>
-                                </div>
-                                <div className='rec-item'>
-                                    <img className='recimage' src={Ketchup} alt='ketchup' />
-                                    <p>Product 3</p>
-                                </div>
-                                <div className='rec-item'>
-                                    <img className='recimage' src={Ketchup} alt='ketchup' />
-                                    <p>Product 4</p>
-                                </div>
-                                <div className='rec-item'>
-                                    <img className='recimage' src={Ketchup} alt='ketchup' />
-                                    <p>Product 5</p>
-                                </div>
-                                <div className='rec-item'>
-                                    <img className='recimage' src={Ketchup} alt='ketchup' />
-                                    <p>Product 6</p>
-                                </div>
+                                </div>    
                             </div>
+                            <div className='rec-items'>
+                                 
+                                    <img className='recimage' src={Ketchup} alt='ketchup' />
+                                
+                                <div className='rec-info'>
+                                    <p>Product 2</p>
+                                </div>    
+                            </div>
+                            <div className='rec-items'>
+                                 
+                                    <img className='recimage' src={Ketchup} alt='ketchup' />
+                                
+                                <div className='rec-info'>
+                                    <p>Product 3</p>
+                                </div>    
+                            </div>
+                            <div className='rec-items'>
+                                 
+                                    <img className='recimage' src={Ketchup} alt='ketchup' />
+                                
+                                <div className='rec-info'>
+                                    <p>Product 4</p>
+                                </div>    
+                            </div>
+
                         </div>
                 </section>
             </div>
